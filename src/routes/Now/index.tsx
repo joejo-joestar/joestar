@@ -1,8 +1,6 @@
 import "./index.css";
 
-type Props = {};
-
-const Now = (props: Props) => {
+const Now = () => {
   return (
     <section className="now">
       <h1>Now</h1>

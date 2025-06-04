@@ -1,8 +1,6 @@
 import "./index.css";
 
-type Props = {};
-
-const Photos = (props: Props) => {
+const Photos = () => {
   return (
     <section className="photos">
       <h1>Photos</h1>

@@ -3,8 +3,6 @@ import { NavLink, Outlet } from "react-router";
 import useMediaQuery from "../../hooks/mq";
 import { useState } from "react";
 
-type Props = {};
-
 function activeStyle({ isActive }: { isActive: boolean }) {
   return {
     color: isActive ? "#a3a3a3" : "",
@@ -14,7 +12,7 @@ function activeStyle({ isActive }: { isActive: boolean }) {
   };
 }
 
-const Navbar = (props: Props) => {
+const Navbar = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const [isOpen, setIsOpen] = useState(false);
 

@@ -1,11 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 
+@font-face {
+  font-family: "Chillax-Variable";
+  src:
+    url("./fonts/Chillax-Variable/Chillax-Variable.woff2") format("woff2"),
+    url("./fonts/Chillax-Variable/Chillax-Variable.woff") format("woff"),
+    url("./fonts/Chillax-Variable/Chillax-Variable.ttf") format("truetype");
+  font-weight: 450 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Synonym-Variable";
+  src:
+    url("./fonts/Synonym-Variable/Synonym-Variable.woff2") format("woff2"),
+    url("./fonts/Synonym-Variable/Synonym-Variable.woff") format("woff"),
+    url("./fonts/Synonym-Variable/Synonym-Variable.ttf") format("truetype");
+  font-weight: 400 700;
+  font-display: swap;
+  font-style: normal;
+}
+
 :root {
-  font-family:
-    "Plus Jakarta Sans", system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 300;
-
+  font-family: "Synonym-Variable", "Noto Serif Display", sans-serif;
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background: #772da5;
@@ -22,30 +42,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.font-heading {
+  font-family: "Chillax-Variable", "Noto Serif Display", sans-serif;
+  font-weight: 700;
+}
+.font-display {
+  font-family: "Noto Serif Display", serif;
+  font-weight: 900;
+}
+.font-body {
+  font-family: "Synonym-Variable", "Noto Serif Display", sans-serif;
+  font-weight: 400;
+}
 /* For Firefox */
 ::-moz-selection {
-  background: #3a3a3a;
+  background: #772da5;
   color: white;
 }
 
 ::selection {
-  background: #3a3a3a;
+  background: #772da5;
   color: white;
-}
-
-.font-display {
-  font-family: "Noto Serif Display", serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-}
-
-.font-body {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 300;
-  font-style: normal;
 }
 
 a {

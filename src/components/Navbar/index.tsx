@@ -22,12 +22,12 @@ const Navbar = () => {
         {/* desktop */}
         {!isMobile && (
           <>
-            <div className="nav-home">
+            <div className="nav-home font-heading">
               <NavLink to="/" end>
                 Joe :3
               </NavLink>
             </div>
-            <div className="nav-links">
+            <div className="nav-links font-heading">
               <NavLink to="/pics" style={activeStyle}>
                 Photos
               </NavLink>
@@ -44,7 +44,7 @@ const Navbar = () => {
         {/* mobile */}
         {isMobile && (
           <>
-            <div className="nav-home">
+            <div className="nav-home font-heading">
               <NavLink to="/" end>
                 Joe :3
               </NavLink>
@@ -97,7 +97,7 @@ const Navbar = () => {
               }}
             >
               <div className="sidebar-content">
-                <div className="nav-links-mobile">
+                <div className="nav-links-mobile font-heading">
                   <NavLink
                     to="/pics"
                     style={activeStyle}

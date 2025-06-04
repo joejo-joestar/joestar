@@ -11,7 +11,7 @@
 
 .home {
   margin-top: 5%;
-  min-width: 80%;
+  max-width: 80%;
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -20,13 +20,8 @@
   text-align: left;
   max-height: 100vh;
 }
-.home h1 {
-  font-weight: 600;
-  font-size: 3rem;
-}
 
 .display-heading {
-  font-weight: 600;
   font-style: italic;
   font-size: 3.3rem;
   color: #c589e0;
@@ -34,10 +29,11 @@
 
 .body-content {
   display: flex;
+  gap: 1rem;
   flex-direction: column;
   padding: 0;
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .logo {

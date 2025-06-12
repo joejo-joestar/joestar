@@ -7,12 +7,20 @@ import Now from "./routes/Now";
 import Photos from "./routes/Photos";
 import Navbar from "./components/Navbar";
 import Contact from "./routes/Contact";
+import Footer from "./components/Footer";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route element={<Navbar />}>
+        <Route
+          element={
+            <>
+              <Navbar />
+              <Footer />
+            </>
+          }
+        >
           <Route path="/" element={<Home />} />
           <Route path="pics" element={<Photos />} />
           <Route path="nownownow" element={<Now />} />

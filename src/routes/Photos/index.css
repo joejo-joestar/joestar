@@ -1,7 +1,6 @@
 .photos {
-  margin-top: 5%;
   /* Use width and auto margins for better centering and control */
-  width: 90%; /* Default width, e.g., for desktop */
+  width: 80%; /* Default width, e.g., for desktop */
   max-width: 1200px; /* Optional: max-width for very large screens */
   margin-left: auto;
   margin-right: auto;

@@ -3,7 +3,6 @@ import CategoryMenu from "../../components/CategoryMenu/index.tsx";
 import { useEffect, useState, type SetStateAction } from "react";
 import MainGallery from "../../components/MainGallery/index.tsx";
 import { getCollections, getPhotos } from "../../api/unsplash";
-import { Outlet } from "react-router";
 
 const Photos = () => {
   const [collectionList, setCollections] = useState<
@@ -87,6 +86,16 @@ const Photos = () => {
           <span className="body-content">
             Here are some of the pictures i have taken over the years.
           </span>
+          <span className="body-content">
+            You can find my work on
+            <a
+              href="http://unsplash.com/@joejojoestar/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Unsplash
+            </a>
+          </span>
           <CategoryMenu
             categories={categories}
             links={links}
@@ -98,7 +107,6 @@ const Photos = () => {
           </div>
         </div>
       </section>
-      <Outlet />
     </>
   );
 };

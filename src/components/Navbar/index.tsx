@@ -45,7 +45,7 @@ const Navbar = () => {
         {isMobile && (
           <>
             <div className="nav-home font-heading">
-              <NavLink to="/" end>
+              <NavLink to="/" onClick={() => setIsOpen(false)} end>
                 Joe :3
               </NavLink>
             </div>

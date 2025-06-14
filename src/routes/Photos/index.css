@@ -1,29 +1,23 @@
-#root {
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 0;
-  min-height: 100vh;
-  min-width: 100%;
-}
-
 .photos {
   margin-top: 5%;
-  max-width: 80%;
-  min-width: 80%;
+  /* Use width and auto margins for better centering and control */
+  width: 90%; /* Default width, e.g., for desktop */
+  max-width: 1200px; /* Optional: max-width for very large screens */
+  margin-left: auto;
+  margin-right: auto;
   padding: 1em;
   display: flex;
   flex-direction: column;
-  align-items: start;
-  justify-content: left;
+  align-items: flex-start; /* Corrected from 'start' */
+  justify-content: flex-start; /* Corrected from 'left' */
   text-align: left;
-  max-height: 100vh;
+  box-sizing: border-box;
 }
+
 .photos h1 {
   font-weight: 600;
   font-size: 3rem;
+  margin-bottom: 1rem; /* Add some space below the heading */
 }
 
 .body-content {
@@ -33,4 +27,38 @@
   padding: 0;
   margin: 0;
   font-size: 1.5rem;
+  width: 100%;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* For tablets and smaller desktops (e.g., less than 1000px, as per your observation) */
+@media (max-width: 100px) {
+  .photos {
+    width: 95%; /* Give a bit more space on smaller "desktop" or tablet screens */
+  }
+  .photos h1 {
+    font-size: 2.5rem;
+  }
+  /* Ensure .category-menu-host remains full width and doesn't get problematic styles */
+  .category-menu-host {
+    width: 100%;
+  }
+}
+
+/* For mobile phones (e.g., less than 600px) */
+@media (max-width: 599px) {
+  .photos {
+    width: 100%; /* Use full width on very small screens */
+    padding: 0.75em; /* Adjust padding if needed */
+  }
+  .photos h1 {
+    font-size: 2rem;
+  }
+  .category-menu-host {
+    width: 100%;
+  }
+  .body-content {
+    font-size: 1.2rem;
+  }
 }

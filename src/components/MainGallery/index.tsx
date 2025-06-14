@@ -1,8 +1,9 @@
 import "./index.css";
 
 interface ImageProps {
-  id: number | string; // Assuming id can be a number or a string
+  id: string; // Assuming id can be a number or a string
   imageUrl: string;
+  unsplashLink: string;
 }
 
 interface GalleryProps {
@@ -12,7 +13,15 @@ export const Gallery: React.FC<GalleryProps> = ({ images }) => {
   return (
     <div className="gallery">
       {images.map((image) => (
-        <img key={image.id} src={image.imageUrl} alt={`Img ${image.id}`} />
+        <>
+          <a
+            href={image.unsplashLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img key={image.id} src={image.imageUrl} alt={`${image.id}`} />
+          </a>
+        </>
       ))}
     </div>
   );

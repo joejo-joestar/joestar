@@ -1,13 +1,13 @@
 import "./index.css";
 import { NavLink, Outlet } from "react-router";
-import useMediaQuery from "../../hooks/mq";
+import useMediaQuery from "../../hooks/useMediaQuery";
 import { useState } from "react";
 
 function activeStyle({ isActive }: { isActive: boolean }) {
   return {
-    color: isActive ? "#a3a3a3" : "",
+    color: isActive ? "#c589e0" : "",
     textDecoration: isActive ? "yellow wavy underline 2px" : "",
-    "text-underline-offset": "4px",
+    textUnderlineOffset: "4px",
     transition: "all 0.3s ease-in-out",
   };
 }
@@ -62,7 +62,7 @@ const Navbar = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  style={{ width: "1.5em", height: "1.5em" }}
+                  style={{ width: "2em", height: "2em" }}
                 >
                   <path
                     strokeLinecap="round"
@@ -77,7 +77,7 @@ const Navbar = () => {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  style={{ width: "1.5em", height: "1.5em" }}
+                  style={{ width: "2em", height: "2em" }}
                 >
                   <path
                     strokeLinecap="round"

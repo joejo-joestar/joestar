@@ -1,15 +1,16 @@
 import "./index.css";
-import CategoryMenu from "../../components/MainGallery/CategoryMenu.tsx";
+import CategoryMenu from "../../components/CategoryMenu/index.tsx";
 import { useEffect, useState, type SetStateAction } from "react";
 import MainGallery from "../../components/MainGallery/index.tsx";
 import { getCollections, getPhotos } from "../../api/unsplash";
+import { Outlet } from "react-router";
 
 const Photos = () => {
   const [collectionList, setCollections] = useState<
-    { id: string; title: string }[]
+    { id: string; title: string; link: string }[]
   >([]);
   const [imageArray, setImageArray] = useState<
-    { id: string; imageUrl: string; category: string }[]
+    { id: string; imageUrl: string; category: string; unsplashLink: string }[]
   >([]);
   const [activeCategory, setActiveCategory] = useState("");
 
@@ -17,12 +18,11 @@ const Photos = () => {
     const collectionData = async () => {
       try {
         const fetechedCollections = await getCollections();
-        console.log("Collection List:", fetechedCollections);
 
         const collectionList = fetechedCollections.map((collection: any) => ({
           id: collection.id,
           title: collection.title,
-          links: collection.links.html,
+          link: collection.links.html,
         }));
         setCollections(collectionList);
         if (collectionList.length > 0) {
@@ -30,10 +30,10 @@ const Photos = () => {
           const initialPhotos = await getPhotos({
             collectionID: collectionList[0].id,
           });
-          console.log("Initial Photos:", initialPhotos);
           const photosArray = initialPhotos.map((photo: any) => ({
             id: photo.id,
-            imageUrl: photo.urls.regular,
+            imageUrl: photo.urls.small,
+            unsplashLink: photo.links.html,
             category: collectionList[0].title,
           }));
           setImageArray(photosArray);
@@ -45,7 +45,12 @@ const Photos = () => {
     collectionData();
   }, []);
 
-  const categories = collectionList.map((collection) => collection.title);
+  const categories = collectionList.map((collection) => {
+    return collection.title;
+  });
+  const links = collectionList.map((collection) => {
+    return collection.link;
+  });
 
   const handleSelectCategory = async (category: SetStateAction<string>) => {
     setActiveCategory(category);
@@ -59,7 +64,8 @@ const Photos = () => {
         });
         const photosArray = photos.map((photo: any) => ({
           id: photo.id,
-          imageUrl: photo.urls.regular,
+          imageUrl: photo.urls.small,
+          unsplashLink: photo.links.html,
           category: selectedCollection.title,
         }));
         setImageArray(photosArray);
@@ -72,27 +78,28 @@ const Photos = () => {
   const filteredImages = imageArray.filter(
     (image) => image.category === activeCategory
   );
-  collectionList.forEach((collection) => {
-    console.log("Collection Title:", collection.title);
-  });
 
   return (
-    <section className="photos">
-      <h1 className="font-heading">Photos</h1>
-      <div className="font-body body-content">
-        <span className="body-content">
-          Here are some of the pictures i have taken over the years.
-        </span>
-        <CategoryMenu
-          categories={categories}
-          activeCategory={activeCategory}
-          onSelectCategory={handleSelectCategory}
-        />
-        <div className="photos-grid">
-          <MainGallery images={filteredImages} />
+    <>
+      <section className="photos">
+        <h1 className="font-heading">Photos</h1>
+        <div className="font-body body-content">
+          <span className="body-content">
+            Here are some of the pictures i have taken over the years.
+          </span>
+          <CategoryMenu
+            categories={categories}
+            links={links}
+            activeCategory={activeCategory}
+            onSelectCategory={handleSelectCategory}
+          />
+          <div className="photos-grid">
+            <MainGallery images={filteredImages} />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <Outlet />
+    </>
   );
 };
 

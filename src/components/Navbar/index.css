@@ -1,7 +1,11 @@
 nav {
   position: fixed;
   z-index: 100;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: color-mix(
+    in srgb,
+    var(--main-bg-color-secondary) 85%,
+    transparent
+  );
   backdrop-filter: blur(5px);
   top: 0;
   padding: 2% 5%;
@@ -16,7 +20,12 @@ nav {
 .nav-home a {
   font-size: 2.25em;
   font-weight: 600;
-  color: #c589e0;
+  color: var(--main-accent-color-mauve);
+}
+.nav-home a:hover {
+  background-color: transparent;
+  color: var(--main-accent-color-green);
+  transition: all 250ms ease-in-out;
 }
 
 .nav-links {
@@ -29,16 +38,22 @@ nav {
   font-size: 1.5em;
   font-weight: 500;
   text-decoration: none;
-  color: #a3a3a3;
+  color: var(--main-text-color-quaternary);
 }
-
+.nav-links-mobile a,
 .nav-links a {
+  padding: 0.1em 0.25em;
   text-decoration: none;
-  color: #a3a3a3;
+  color: var(--main-text-color-quaternary);
+  transition:
+    color 0.3s ease-in-out,
+    font-weight 0.3s ease-in-out;
 }
+.nav-links-mobile a:hover,
 .nav-links a:hover {
-  color: white;
-  transition: all 0.3s ease-in-out;
+  background-color: var(--main-surface-color);
+  color: var(--main-accent-color-green);
+  transition: all 250ms ease-in-out;
 }
 
 .sidebar {
@@ -57,7 +72,7 @@ nav {
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
-  color: white;
+  color: var(--main-accent-color-rosewater);
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -70,15 +85,20 @@ nav {
   right: 7%;
   z-index: 51;
 }
-
 .menu-button:hover {
-  color: #c589e0;
+  background-color: var(--main-surface-color);
+  color: var(--main-accent-color-red);
 }
 
 .sidebar-content {
   height: 100%;
   overflow-y: auto;
-  background-color: rgba(30, 30, 30, 0.95);
+  background-color: color-mix(
+    in srgb,
+    var(--main-bg-color-secondary) 85%,
+    transparent
+  );
+  backdrop-filter: blur(5px);
   padding: 1.25rem 0.75rem;
   display: flex;
   flex-direction: column;
@@ -98,14 +118,4 @@ nav {
   font-size: 1.5em;
   font-weight: 500;
   text-decoration: none;
-}
-
-.nav-links-mobile a {
-  text-decoration: none;
-  color: #a3a3a3;
-}
-
-.nav-links-mobile a:hover {
-  color: white;
-  transition: all 0.3s ease-in-out;
 }

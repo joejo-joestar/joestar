@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
-import useMediaQuery from "../../hooks/useMediaQuery"; // Adjust path if necessary
+import useMediaQuery from "../../hooks/useMediaQuery";
 import "./index.css";
 
 interface CategoryMenuProps {
@@ -16,18 +16,15 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({
   onSelectCategory,
 }) => {
   const submenuRef = useRef<HTMLDivElement>(null);
-  const isMobileView = useMediaQuery("(max-width: 1100px)"); // Your breakpoint
+  const isMobileView = useMediaQuery("(max-width: 1100px)");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Effect to handle horizontal scroll for desktop view's active item
-  // This is a basic example; you might want to scroll the active item into view.
   useEffect(() => {
     if (!isMobileView && submenuRef.current) {
       const activeButton = submenuRef.current.querySelector(
         "button.active"
       ) as HTMLElement;
       if (activeButton) {
-        // Basic scroll into view logic, can be improved
         const scrollLeft =
           activeButton.offsetLeft - submenuRef.current.offsetLeft;
         const centerOffset =
@@ -40,7 +37,7 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({
   const handleCategorySelect = (category: string, index: number) => {
     onSelectCategory(category, index);
     if (isMobileView) {
-      setIsMobileMenuOpen(false); // Close mobile menu on selection
+      setIsMobileMenuOpen(false);
     }
   };
 
@@ -60,11 +57,12 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
           aria-label={`Link to ${category} (opens in new tab)`}
+          className="external-link"
         >
           <svg
+            className="external-link-icon"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"
-            className="external-link-icon"
           >
             <path d="M384 32c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96C0 60.7 28.7 32 64 32l320 0zM160 144c-13.3 0-24 10.7-24 24s10.7 24 24 24l94.1 0L119 327c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l135-135L288 328c0 13.3 10.7 24 24 24s24-10.7 24-24l0-160c0-13.3-10.7-24-24-24l-152 0z" />
           </svg>
@@ -122,7 +120,6 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({
     );
   }
 
-  // Desktop view: Original horizontal scroll menu
   return (
     <div className="submenu-wrapper">
       <div className="submenu" ref={submenuRef} id="submenu">

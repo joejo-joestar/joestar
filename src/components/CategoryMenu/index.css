@@ -27,8 +27,9 @@
 }
 
 .submenu button {
+  font-family: "Space Mono", Courier, monospace;
   display: inline-block;
-  color: #a3a3a3;
+  color: var(--main-text-color-quaternary);
   border: none;
   background-color: transparent;
   margin: 0;
@@ -41,32 +42,15 @@
   position: relative;
   white-space: nowrap;
 }
-
-.submenu button::after {
-  display: block;
-  content: "";
-  border-bottom: solid 2px #a3a3a3;
-  transform: scaleX(0);
-  transition: transform 250ms ease-in-out;
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-}
-
-.submenu button:hover::after {
-  transform: scaleX(1);
-  transform-origin: 0% 50%;
+.submenu button:hover {
+  background-color: var(--main-surface-color);
+  color: var(--main-accent-color-green);
+  transition: all 0.2s ease-in-out;
 }
 
 .submenu button.active {
-  color: #fff;
-}
-
-.submenu button.active::after {
-  border-bottom-color: #fff;
-  transform: scaleX(1);
-  transform-origin: 0% 50%;
+  color: var(--main-accent-color-mauve);
+  border: solid var(--main-accent-color-mauve) 2px;
 }
 
 .external-link-icon {
@@ -74,14 +58,24 @@
   height: 1em;
   margin-left: 0.5em;
   vertical-align: middle;
-  fill: #a3a3a3;
+  fill: var(--main-text-color-quaternary);
   transition: fill 0.2s ease-in-out;
 }
 
-.submenu button .external-link-icon:hover {
-  fill: #fff;
+.submenu button .external-link:hover {
+  background-color: transparent;
 }
 
+.submenu button .external-link-icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.submenu button .external-link-icon:hover {
+  fill: var(--main-accent-color-green);
+}
+
+/* mobile */
 .category-menu-mobile-container {
   display: none;
 }
@@ -90,38 +84,24 @@
   display: flex;
   justify-content: center;
   margin-top: 1rem;
-  font-size: 20px;
-  color: #a3a3a3;
 }
 
 .mobile-menu-trigger {
-  display: inline-block;
+  padding: 0.1em 0.25em;
   cursor: pointer;
-  font-size: 20px;
-  padding-bottom: 2px;
-  margin-bottom: 2rem;
-  min-width: fit-content;
-  position: relative;
-  color: #fff;
+  text-decoration: none;
+  color: var(--main-text-color-quaternary);
+  transition:
+    color 0.3s ease-in-out,
+    font-weight 0.3s ease-in-out;
   background-color: transparent;
-  border: none;
+  border: solid 2px;
 }
 
-.mobile-menu-trigger::after {
-  display: block;
-  content: "";
-  border-bottom: solid 2px #fff;
-  transform: scaleX(0);
-  transition: transform 250ms ease-in-out;
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 100%;
-}
-
-.mobile-menu-trigger:hover::after {
-  transform: scaleX(1);
-  transform-origin: 0% 50%;
+.mobile-menu-trigger:hover {
+  background-color: var(--main-surface-color);
+  color: var(--main-accent-color-green);
+  transition: all 250ms ease-in-out;
 }
 
 .mobile-category-sidebar {
@@ -131,9 +111,13 @@
   width: 280px;
   max-width: 80vw;
   height: 100vh;
-  background-color: rgba(30, 30, 30, 0.95);
-  color: white;
-  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.3);
+  background-color: color-mix(
+    in srgb,
+    var(--main-bg-color-secondary) 85%,
+    transparent
+  );
+  backdrop-filter: blur(5px);
+  color: var(--main-text-color-quaternary);
   transform: translateX(100%);
   transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 1001;
@@ -154,7 +138,7 @@
   align-items: center;
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid var(--color-border, #444);
+  border-bottom: 1px solid var(--main-accent-color-mauve);
 }
 
 .mobile-sidebar-header h3 {
@@ -167,13 +151,17 @@
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
-  color: white;
+  color: var(--main-accent-color-red);
   background-color: transparent;
   border: none;
   cursor: pointer;
   transition-property: color, transform;
   transition-timing-function: ease-in-out;
   transition-duration: 0.3s;
+}
+.close-mobile-menu:hover {
+  background-color: var(--main-surface-color);
+  transition: all 0.2s ease-in-out;
 }
 
 .mobile-sidebar-nav {
@@ -183,6 +171,8 @@
 }
 
 .mobile-category-button {
+  font-family: "Space Mono", Courier, monospace;
+
   width: 100%;
   text-align: left;
   /* padding: 0.8rem 1rem; */

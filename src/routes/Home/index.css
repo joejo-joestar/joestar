@@ -10,8 +10,8 @@
 }
 
 .home {
-  width: 80%; /* Default width, e.g., for desktop */
-  max-width: 1200px; /* Optional: max-width for very large screens */
+  width: 80%;
+  max-width: 1200px;
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -22,8 +22,7 @@
 
 .display-heading {
   font-style: italic;
-  font-size: 3.3rem;
-  color: #c589e0;
+  color: var(--main-accent-color-mauve);
 }
 
 .body-content {
@@ -33,4 +32,25 @@
   padding: 0;
   margin: 0;
   font-size: 1.5rem;
+}
+
+.body-content span {
+  font-weight: 500;
+  color: var(--main-text-color-secondary);
+}
+
+.bar {
+  width: 100%;
+  height: 2px;
+  background-color: var(--main-accent-color-mauve);
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.projects-heading {
+  color: var(--main-accent-color-rosewater);
 }

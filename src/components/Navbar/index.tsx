@@ -5,10 +5,9 @@ import { useState } from "react";
 
 function activeStyle({ isActive }: { isActive: boolean }) {
   return {
-    color: isActive ? "#c589e0" : "",
-    textDecoration: isActive ? "yellow wavy underline 2px" : "",
-    textUnderlineOffset: "4px",
-    transition: "all 0.3s ease-in-out",
+    color: isActive ? "#cba6f7" : "",
+    fontWeight: isActive ? "bold" : "normal",
+    border: isActive ? "solid #cba6f7 2px " : "",
   };
 }
 

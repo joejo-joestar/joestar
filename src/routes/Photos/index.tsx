@@ -81,20 +81,22 @@ const Photos = () => {
   return (
     <>
       <section className="photos">
-        <h1 className="font-heading">Photos</h1>
-        <div className="font-body body-content">
+        <h1 className="">Photos</h1>
+        <div className="body-content">
           <span className="body-content">
             Here are some of the pictures i have taken over the years.
           </span>
           <span className="body-content">
-            You can find my work on
-            <a
-              href="http://unsplash.com/@joejojoestar/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Unsplash
-            </a>
+            <p>
+              You can find my work on{" "}
+              <a
+                href="http://unsplash.com/@joejojoestar/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Unsplash
+              </a>
+            </p>
           </span>
           <CategoryMenu
             categories={categories}

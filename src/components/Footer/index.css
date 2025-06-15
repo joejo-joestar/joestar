@@ -1,7 +1,11 @@
 footer {
   position: absolute;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: color-mix(
+    in srgb,
+    var(--main-bg-color-secondary) 85%,
+    transparent
+  );
   backdrop-filter: blur(5px);
   color: white;
   padding: 20px;

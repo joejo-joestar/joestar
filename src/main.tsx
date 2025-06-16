@@ -8,9 +8,11 @@ import Photos from "./routes/Photos";
 import Navbar from "./components/Navbar";
 import Contact from "./routes/Contact";
 import Footer from "./components/Footer";
+import Oneko from "./oneko";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
+    <Oneko />
     <BrowserRouter>
       <Routes>
         <Route

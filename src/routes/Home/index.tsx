@@ -6,26 +6,28 @@ function Home() {
     <>
       <section className="home">
         <h1>
-          Hi, I'm <span className="display-heading">Joe</span>!
+          hi, i'm <span className="display-heading">Joe</span>!
         </h1>
-        <div className="body-content">
+        <div className="home-body-content">
           <span>
-            I'm a Computer Science student in Birla Institue of Technology and
+            i'm a Computer Science student in Birla Institue of Technology and
             Science.
             <p>
-              Check out what I'm doing <NavLink to="/nownownow">now</NavLink>.
+              check out what i'm doing <NavLink to="/nownownow">now</NavLink>.
             </p>
             <p>
-              Head over to <NavLink to="contact">Contact</NavLink> to get in
-              touch with me.
+              Head over to the <NavLink to="contact">contact</NavLink> page to
+              get in touch with me.
             </p>
           </span>
+
           <br />
           <div className="bar" />
           <br />
+
           <span className="projects">
             <p className="projects-heading">
-              Here are some of the{" "}
+              here are some of the{" "}
               <a
                 href="https://github.com/joejo-joestar?tab=repositories"
                 target="_blank"
@@ -33,7 +35,7 @@ function Home() {
               >
                 projects
               </a>{" "}
-              I have, and am still working on.
+              . i have, and am still working on
             </p>
             <ul>
               <li>
@@ -46,7 +48,7 @@ function Home() {
                     uni-codes
                   </a>
                   <br />
-                  Archive of programs for all lab practicals.
+                  archive of programs for all lab practicals.
                 </p>
               </li>
               <li>
@@ -56,10 +58,10 @@ function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    DSA-Stuff
+                    dsa-stuff
                   </a>
                   <br />
-                  Java codes for various data structures and DSA topics.
+                  java codes for various data structures and dsa topics.
                 </p>
               </li>
               <li>
@@ -69,17 +71,17 @@ function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    MTC Mediathon Submission
+                    mtc mediathon submission
                   </a>
                   <br />
-                  Basic HTML CSS for a club competition.
+                  basic html css for a club competition.
                   <br />
                   <a
                     href="https://sreenikethani.github.io/Mediathon2024-Logitik/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Live Demo
+                    live demo
                   </a>
                   <br />(
                   <a
@@ -87,7 +89,7 @@ function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Won Best Website Award
+                    won best website award
                   </a>
                   )
                 </p>
@@ -95,51 +97,51 @@ function Home() {
               <li>
                 <p>
                   <a href="pbee.vercel.app">pBee.ai</a> <br />
-                  A project involving a React frontend.
+                  a project involving a react frontend.
                   <br />
                   <a
                     href="https://github.com/joejo-joestar/pBee.ai-frontend"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    React Frontend Repository
+                    react frontend repository
                   </a>
                 </p>
               </li>
               <li>
                 <p>
-                  Font Detection App
+                  font detection app
                   <br />
-                  Project for Foundations of Data Science Course.
+                  project for foundations of data science course.
                   <br />
                   <a
-                    href="https://github.com/joejo-joestar/Font-Detection-App"
+                    href="https://github.com/joejo-joestar/font-detection-app"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Frontend Repository
+                    frontend repository
                   </a>{" "}
                   and{" "}
                   <a
-                    href="https://github.com/SreenikethanI/Font-Detection-Model"
+                    href="https://github.com/sreenikethani/font-detection-model"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Model Repository
+                    model repository
                   </a>
                 </p>
               </li>
               <li>
                 <p>
                   <a
-                    href="https://github.com/joejo-joestar/FakeNews-Detection-Model"
+                    href="https://github.com/joejo-joestar/fakenews-detection-model"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Fake News Detection Model
+                    fake news detection model
                   </a>
                   <br />
-                  Project for Data Mining Course.
+                  project for data mining course.
                 </p>
               </li>
               <li>
@@ -149,10 +151,10 @@ function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    NTRU-RLWE Hybrid FHE Scheme Demo
+                    ntru-rlwe hybrid fhe scheme demo
                   </a>
                   <br />
-                  Project for Cryptography Course.
+                  project for cryptography course.
                 </p>
               </li>
             </ul>

@@ -1,19 +1,19 @@
 .gallery {
   padding: 20px;
-  display: flex; /* This will be overridden for desktop */
+  display: flex;
   flex-direction: column;
-  align-items: center; /* Centers images if max-width is hit */
-  gap: 15pt; /* Vertical gap between images on mobile */
+  align-items: center;
+  gap: 15pt;
 }
 
 .gallery img {
   border-radius: 5px;
   transition: all 0.25s ease;
   user-select: none;
-  width: 100%; /* Takes full width of its container */
-  max-width: 480px; /* Default max-width, good for mobile */
-  height: auto; /* Maintain aspect ratio */
-  margin-bottom: 0; /* Ensure no margin from other states by default */
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  margin-bottom: 0;
 }
 
 .gallery img.loaded {
@@ -21,78 +21,65 @@
 }
 
 .gallery img:hover {
-  /* Default hover, good for mobile */
   transform: scale(1.02);
-  filter: none; /* Ensure no filter by default */
+  filter: none;
 }
 
-/* Desktop styles (screens effectively > 667px and <= 2560px due to mobile override)
-   Uses multi-column layout.
-*/
+.gallery a:hover {
+  background-color: transparent;
+}
+
 @media (max-width: 2560px) {
   .gallery {
-    --desktop-image-gap: 15pt; /* Define the consistent gap value */
-    padding: 25px; /* Original padding for desktop */
-    display: block; /* Override mobile's flex display */
+    --desktop-image-gap: 15pt;
+    padding: 25px;
+    display: block;
     column-count: 3;
-    column-gap: var(
-      --desktop-image-gap
-    ); /* Use the variable for gap between columns */
+    column-gap: var(--desktop-image-gap);
 
-    /* Reset flex properties that might have been inherited or set by base */
     flex-direction: initial;
     align-items: initial;
-    gap: initial; /* Remove flex gap, use margin on items instead for vertical spacing */
+    gap: initial;
   }
 
   .gallery img {
-    width: 100%; /* Image takes full width of the column it's in */
-    max-width: 100%; /* Allow images to fill the column width */
-    height: auto; /* Maintain aspect ratio, column height will adapt */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     filter: grayscale(50%);
-    margin-bottom: var(
-      --desktop-image-gap
-    ); /* Use the variable for vertical gap BETWEEN images */
-    break-inside: avoid-column; /* Attempt to keep images from splitting across columns */
-    /* transition, user-select, border-radius are inherited */
-    /* opacity will be handled by .loaded class */
+    margin-bottom: var(--desktop-image-gap);
+    break-inside: avoid-column;
   }
 
   .gallery img:hover {
     filter: grayscale(0%);
-    transform: scale(1.05); /* Original desktop hover scale */
+    transform: scale(1.05);
   }
 }
 
-/* Mobile specific override (for screens <= 667px)
-   This overrides the (max-width: 2560px) multi-column rule for smaller screens,
-   reinstating the single-column flex layout.
-*/
 @media (max-width: 667px) {
   .gallery {
-    padding: 20px; /* Ensure mobile padding */
-    display: flex; /* Back to flex for single column */
+    padding: 20px;
+    display: flex;
     flex-direction: column;
-    align-items: center; /* Center items in the column */
-    gap: 15pt; /* Mobile gap using flexbox gap for vertical spacing */
+    align-items: center;
+    gap: 15pt;
 
-    /* Reset multi-column properties */
-    column-count: initial; /* Effectively 1, or just 'auto' */
+    column-count: initial;
     column-gap: initial;
   }
 
   .gallery img {
-    width: 100%; /* Full width in the flex column */
-    max-width: 480px; /* Cap image width for mobile, consistent with base */
+    width: 100%;
+    max-width: 480px;
     height: auto;
-    filter: none; /* Remove grayscale filter for mobile if desired */
-    margin-bottom: 0; /* Use flex 'gap' for spacing, so reset margin */
-    break-inside: initial; /* Reset break-inside property */
-    /* opacity, transition, user-select, border-radius inherited */
+    filter: none;
+    margin-bottom: 0;
+    break-inside: initial;
   }
 
   .gallery img:hover {
-    transform: scale(1.02); /* Mobile hover */
-    filter: none; /* Ensure no grayscale on hover for mobile */
+    transform: scale(1.02);
+    filter: none;
   }
 }

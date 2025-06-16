@@ -4,25 +4,21 @@ import "./index.css";
 const Now = () => {
   return (
     <section className="now">
-      <h1 className="font-heading">Now</h1>
-      <div className="font-body body-content">
+      <h1>Now</h1>
+      <div className="body-content">
         <span>
-          I am currently working on a few projects, including a personal website
-          and a mobile app. I am also learning technologies like React and
-          Node.js. Check Below to see what I'm up to right now!
+          i am currently working on a few projects, including a personal
+          website.
+          <br />i am also learning technologies like <em>Power BI</em> and{" "}
+          <em>Node.js</em>. check below to see what i'm up to right now!
         </span>
         <span>
-          In my free time, I enjoy reading books, playing video games, and
-          exploring new places.
-        </span>
-        <span>
-          Feel free to <NavLink to="/contact">reach out</NavLink> if you want to
+          feel free to <NavLink to="/contact">reach out</NavLink> if you want to
           collaborate!
         </span>
-        <h2>What im upto rn</h2>
         <ul>
           <li>
-            Reading{" "}
+            reading{" "}
             <a
               href="https://www.wikiwand.com/en/articles/I_Am_a_Cat"
               target="_blank"
@@ -33,7 +29,7 @@ const Now = () => {
             by Natsume Sōseki
           </li>
           <li>
-            Reading{" "}
+            reading{" "}
             <a
               href="https://www.wikiwand.com/en/articles/The_Hitchhiker%27s_Guide_to_the_Galaxy"
               target="_blank"
@@ -43,8 +39,12 @@ const Now = () => {
             </a>{" "}
             by Douglas Adams
           </li>
-          <li>Working on a side project in react-native</li>
-          <li>Playing video games in my free time</li>
+          <li>
+            working on a side project in <em>react-native</em>
+          </li>
+          <li>playing video games in my free time</li>
+          <li>enjoying my vacation</li>
+          <li>looking for an internship</li>
         </ul>
       </div>
     </section>

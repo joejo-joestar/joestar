@@ -25,7 +25,6 @@
 .submenu::-webkit-scrollbar {
   display: none;
 }
-
 .submenu button {
   font-family: "Space Mono", Courier, monospace;
   display: inline-block;
@@ -42,12 +41,13 @@
   position: relative;
   white-space: nowrap;
 }
+.mobile-category-button:hover,
 .submenu button:hover {
   background-color: var(--main-surface-color);
   color: var(--main-accent-color-green);
   transition: all 0.2s ease-in-out;
 }
-
+.mobile-category-button.active,
 .submenu button.active {
   color: var(--main-accent-color-mauve);
   border: solid var(--main-accent-color-mauve) 2px;
@@ -62,16 +62,16 @@
   transition: fill 0.2s ease-in-out;
 }
 
-.submenu button .external-link:hover {
+.external-link:hover {
   background-color: transparent;
 }
 
-.submenu button .external-link-icon {
+.external-link-icon {
   display: inline-block;
   vertical-align: middle;
 }
 
-.submenu button .external-link-icon:hover {
+.external-link-icon:hover {
   fill: var(--main-accent-color-green);
 }
 
@@ -86,8 +86,12 @@
   margin-top: 1rem;
 }
 
-.mobile-menu-trigger {
+button.mobile-menu-trigger {
+  font-family: "Space Mono", Courier, monospace;
+  font-size: large;
   padding: 0.1em 0.25em;
+  width: fit-content;
+  height: 3rem;
   cursor: pointer;
   text-decoration: none;
   color: var(--main-text-color-quaternary);
@@ -167,19 +171,16 @@
 .mobile-sidebar-nav {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 1.5rem;
 }
 
 .mobile-category-button {
   font-family: "Space Mono", Courier, monospace;
-
   width: 100%;
   text-align: left;
-  /* padding: 0.8rem 1rem; */
+  padding: 0.5rem 1rem;
   font-size: 16px;
-  padding-bottom: 3px;
-  margin-bottom: 2rem;
-  color: #a3a3a3;
+  color: var(--main-text-color-quaternary);
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -189,21 +190,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.mobile-category-button:hover {
-  color: white;
-  transition: all 0.2s ease-in-out;
-}
-
-.mobile-category-button.active {
-  color: #fff;
-  border-bottom: solid 2px #fff;
-  font-weight: 600;
-}
-
-.mobile-category-button::after {
-  display: none;
 }
 
 @media (max-width: 1100px) {

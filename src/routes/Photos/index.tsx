@@ -82,13 +82,13 @@ const Photos = () => {
     <>
       <section className="photos">
         <h1 className="">Photos</h1>
-        <div className="body-content">
-          <span className="body-content">
-            Here are some of the pictures i have taken over the years.
+        <div className="photos-body-content">
+          <span className="photos-body-content">
+            here are some of the pictures i have taken over the years.
           </span>
-          <span className="body-content">
+          <span className="photos-body-content">
             <p>
-              You can find my work on{" "}
+              you can find my work on{" "}
               <a
                 href="http://unsplash.com/@joejojoestar/"
                 target="_blank"

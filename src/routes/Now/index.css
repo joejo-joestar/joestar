@@ -10,8 +10,8 @@
 }
 
 .now {
-  width: 80%; /* Default width, e.g., for desktop */
-  max-width: 1200px; /* Optional: max-width for very large screens */
+  width: 80%;
+  max-width: 1200px;
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -23,6 +23,8 @@
 .now h1 {
   font-weight: 600;
   font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--main-accent-color-green);
 }
 
 .body-content {
@@ -32,4 +34,9 @@
   padding: 0;
   margin: 0;
   font-size: 1.5rem;
+}
+
+.body-content em {
+  font-style: italic;
+  color: var(--main-accent-color-sapphire);
 }

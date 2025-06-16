@@ -19,7 +19,7 @@
   color: var(--main-accent-color-green);
 }
 
-.body-content {
+.photos-body-content {
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -53,7 +53,7 @@
   .category-menu-host {
     width: 100%;
   }
-  .body-content {
+  .photos-body-content {
     font-size: 1.2rem;
   }
 }

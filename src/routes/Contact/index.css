@@ -36,36 +36,40 @@
   font-size: 1.5rem;
 }
 
-.contact-body-content em {
-  font-style: italic;
-  color: var(--main-accent-color-sapphire);
+.contact-contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
-.contact-body-content p {
-  margin: 0.5em 0;
-}
-.contact-body-content ul {
-  list-style-type: none;
-  padding-left: 1.5em;
-}
-.contact-body-content li {
-  margin: 0.5em 0;
+.contact-contact-links a {
+  padding: 0.25em;
+  text-decoration: none;
+  /* cursor: url(), pointer; */
 }
 
-.contact-body-content p {
+.social-link {
+  padding: 0.1rem;
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  align-items: center;
+}
+
+.email-span {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 0.5em;
 }
 
-.contact-body-content .email {
+.email {
   font-weight: 500;
   font-size: 0.8em;
   color: var(--main-accent-color-sapphire);
   text-decoration: none;
   cursor: url(), pointer;
 }
-.contact-body-content .email:hover {
+.email:hover {
   text-decoration: underline wavy var(--main-accent-color-sapphire) 2px;
 }

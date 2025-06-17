@@ -24,6 +24,7 @@ nav {
 }
 .nav-home a:hover {
   background-color: transparent;
+  box-shadow: none;
   color: var(--main-accent-color-green);
   transition: all 250ms ease-in-out;
 }

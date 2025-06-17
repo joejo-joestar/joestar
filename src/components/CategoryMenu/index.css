@@ -29,6 +29,10 @@
   font-family: "Space Mono", Courier, monospace;
   display: inline-block;
   color: var(--main-text-color-quaternary);
+  text-shadow:
+    3px 0 1px rgba(0, 0, 0, 0.1),
+    -3px 0 1px rgba(0, 0, 0, 0.1),
+    0 0 3px;
   border: none;
   background-color: transparent;
   margin: 0;
@@ -43,6 +47,9 @@
 }
 .mobile-category-button:hover,
 .submenu button:hover {
+  box-shadow:
+    2px 0 1px rgba(255, 255, 255, 0.1),
+    -2px 0 1px rgba(255, 255, 255, 0.1);
   background-color: var(--main-surface-color);
   color: var(--main-accent-color-green);
   transition: all 0.2s ease-in-out;
@@ -64,6 +71,7 @@
 
 .external-link:hover {
   background-color: transparent;
+  box-shadow: none;
 }
 
 .external-link-icon {
@@ -95,6 +103,13 @@ button.mobile-menu-trigger {
   cursor: pointer;
   text-decoration: none;
   color: var(--main-text-color-quaternary);
+  text-shadow:
+    3px 0 1px rgba(0, 0, 0, 0.1),
+    -3px 0 1px rgba(0, 0, 0, 0.1),
+    0 0 3px;
+  box-shadow:
+    2px 0 1px rgba(255, 255, 255, 0.1),
+    -2px 0 1px rgba(255, 255, 255, 0.1);
   transition:
     color 0.3s ease-in-out,
     font-weight 0.3s ease-in-out;
@@ -181,6 +196,10 @@ button.mobile-menu-trigger {
   padding: 0.5rem 1rem;
   font-size: 16px;
   color: var(--main-text-color-quaternary);
+  text-shadow:
+    3px 0 1px rgba(0, 0, 0, 0.1),
+    -3px 0 1px rgba(0, 0, 0, 0.1),
+    0 0 3px;
   background-color: transparent;
   border: none;
   cursor: pointer;

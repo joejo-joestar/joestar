@@ -20,6 +20,20 @@ footer p {
   margin: 0;
   font-size: 1rem;
 }
+
+.social-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-links a:hover {
+  background-color: transparent;
+}
+
 .fab {
   width: auto;
   height: 1.5rem;

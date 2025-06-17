@@ -38,6 +38,10 @@
   font-weight: 500;
   color: var(--main-text-color-secondary);
 }
+.home-body-content span em {
+  font-style: italics;
+  color: var(--main-accent-color-sapphire);
+}
 
 .bar {
   width: 100%;

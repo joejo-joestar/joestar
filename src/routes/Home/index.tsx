@@ -10,8 +10,8 @@ function Home() {
         </h1>
         <div className="home-body-content">
           <span>
-            i'm a Computer Science student in Birla Institue of Technology and
-            Science.
+            i'm a <em>Computer Science</em> student in Birla Institue of
+            Technology and Science.
             <p>
               check out what i'm doing <NavLink to="/nownownow">now</NavLink>.
             </p>
@@ -34,7 +34,7 @@ function Home() {
                 rel="noopener noreferrer"
               >
                 projects
-              </a>{" "}
+              </a>
               . i have, and am still working on
             </p>
             <ul>

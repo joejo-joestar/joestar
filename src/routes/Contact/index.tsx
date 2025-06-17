@@ -83,7 +83,7 @@ const Contact = () => {
             <p
               className="email"
               onClick={() => {
-                navigator.clipboard.writeText("joecn2704+hello@outlook.com");
+                navigator.clipboard.writeText("joecn2704+hello\x40outlook.com");
               }}
             >
               joecn2704<em>{"<at>"}</em>outlook<em>{"<dot>"}</em>com

@@ -71,7 +71,7 @@ const Contact = () => {
           <p className="resume-span">
             or even check out my resume{" "}
             <a
-              href="src/assets/resume.pdf"
+              href="https://drive.google.com/file/d/1o9rlqZ5aGQwrtbtODvfEmDuDWkWJZQFU/view?usp=sharing"
               target="blank"
               rel="noopener noreferrer"
             >

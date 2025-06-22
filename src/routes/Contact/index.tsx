@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import "./index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const socials: { name: string; icon: any; url: string }[] = [
   {
@@ -31,6 +32,7 @@ const socials: { name: string; icon: any; url: string }[] = [
 ];
 
 const Contact = () => {
+  useScrollToTop();
   return (
     <section className="contact">
       <h1 className="font-heading">Contact</h1>

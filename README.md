@@ -31,4 +31,4 @@ npm i
 - [x] custom import aliases ([refer here](https://github.com/mtcbpdcdubai/mtcbpdcdubai.github.io?tab=readme-ov-file#custom-import-alias) and [this answer on stackoverflow](https://stackoverflow.com/a/77249075))
 - [ ] loop lists
 - [x] unsplash deployment (🙏)
-- [ ] react router gototop setting
+- [x] react router gototop setting (react-router does not support the `scrollRestoration` property, so we have to do it manually ([check here](https://reactrouter.com/start/modes#api--mode-availability-table)))

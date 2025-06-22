@@ -3,8 +3,10 @@ import CategoryMenu from "@components/CategoryMenu/index.tsx";
 import { useEffect, useState, type SetStateAction } from "react";
 import MainGallery from "@components/MainGallery/index.tsx";
 import { getCollections, getPhotos } from "@api/unsplash";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const Photos = () => {
+  useScrollToTop();
   const [collectionList, setCollections] = useState<
     { id: string; title: string; link: string }[]
   >([]);

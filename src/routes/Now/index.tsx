@@ -1,7 +1,9 @@
 import { NavLink } from "react-router";
 import "./index.css";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const Now = () => {
+  useScrollToTop();
   return (
     <section className="now">
       <h1>Now</h1>

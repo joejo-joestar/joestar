@@ -1,6 +1,6 @@
 import "./index.css";
 import { NavLink, Outlet } from "react-router";
-import useMediaQuery from "../../hooks/useMediaQuery";
+import useMediaQuery from "@hooks/useMediaQuery";
 import { useState } from "react";
 
 function activeStyle({ isActive }: { isActive: boolean }) {

@@ -1,8 +1,8 @@
 import "./index.css";
-import CategoryMenu from "../../components/CategoryMenu/index.tsx";
+import CategoryMenu from "@components/CategoryMenu/index.tsx";
 import { useEffect, useState, type SetStateAction } from "react";
-import MainGallery from "../../components/MainGallery/index.tsx";
-import { getCollections, getPhotos } from "../../api/unsplash";
+import MainGallery from "@components/MainGallery/index.tsx";
+import { getCollections, getPhotos } from "@api/unsplash";
 
 const Photos = () => {
   const [collectionList, setCollections] = useState<

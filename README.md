@@ -26,7 +26,7 @@ npm i
   - [x] responsive
 - [x] contact
   - [ ] responsive
-- [ ] custom import aliases ([refer here](https://github.com/mtcbpdcdubai/mtcbpdcdubai.github.io?tab=readme-ov-file#custom-import-alias))
+- [x] custom import aliases ([refer here](https://github.com/mtcbpdcdubai/mtcbpdcdubai.github.io?tab=readme-ov-file#custom-import-alias) and [this answer on stackoverflow](https://stackoverflow.com/a/77249075))
 - [ ] loop lists
 - [ ] unsplash deployment
 - [ ] react router gototop setting

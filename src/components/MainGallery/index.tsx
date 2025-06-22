@@ -1,7 +1,7 @@
 import "./index.css";
 
 interface ImageProps {
-  id: string; // Assuming id can be a number or a string
+  id: string;
   imageUrl: string;
   unsplashLink: string;
 }

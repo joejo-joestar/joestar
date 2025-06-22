@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+// refer: https://dev.to/salimzade/handle-media-query-in-react-with-hooks-3cp3
 // Define the hook with 'query' parameter typed as a string
 const useMediaQuery = (query: string): boolean => {
   // Initialize state directly with the media query's current match status

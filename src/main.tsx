@@ -1,14 +1,14 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import Home from "./routes/Home";
 import { BrowserRouter, Route, Routes } from "react-router";
-import Now from "./routes/Now";
-import Photos from "./routes/Photos";
-import Navbar from "./components/Navbar";
-import Contact from "./routes/Contact";
-import Footer from "./components/Footer";
 import Oneko from "./oneko";
+import Navbar from "@components/Navbar";
+import Footer from "@components/Footer";
+import Home from "@routes/Home";
+import Photos from "@routes/Photos";
+import Now from "@routes/Now";
+import Contact from "@routes/Contact";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

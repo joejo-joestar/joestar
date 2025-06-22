@@ -68,6 +68,17 @@ const Contact = () => {
               joecn2704<em>{"<at>"}</em>outlook<em>{"<dot>"}</em>com
             </p>
           </p>
+          <p className="resume-span">
+            or even check out my resume{" "}
+            <a
+              href="src/assets/resume.pdf"
+              target="blank"
+              rel="noopener noreferrer"
+            >
+              here
+            </a>
+            .
+          </p>
         </span>
       </div>
     </section>

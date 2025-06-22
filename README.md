@@ -1,4 +1,4 @@
-# joestar
+# 🌐 joestar
 
 my portfolio website :3
 
@@ -8,25 +8,27 @@ to run this project locally, you need to have [Node.js](https://nodejs.org/) ins
 npm i
 ```
 
-## Special Thanks
+## 🙏 Special Thanks
 
 - [Oneko](https://github.com/adryd325/oneko.js/) for cat follow mouse real!.
 - [nownownow](https://nownownow.com/about) for the "now" page
 
-## Todo
+ ---
+
+## 📋 Todo
 
 - [x] home
   - [x] projects list
   - [ ] responsive
-  - [x] oneko
+  - [x] [oneko](https://github.com/adryd325/oneko.js/)
 - [x] photos
   - [ ] responsive
   - [ ] loading indicator
-- [x] now
+- [x] [now](https://nownownow.com/about)
   - [x] responsive
 - [x] contact
-  - [ ] responsive
+  - [x] responsive
 - [x] custom import aliases ([refer here](https://github.com/mtcbpdcdubai/mtcbpdcdubai.github.io?tab=readme-ov-file#custom-import-alias) and [this answer on stackoverflow](https://stackoverflow.com/a/77249075))
 - [ ] loop lists
-- [ ] unsplash deployment
+- [x] unsplash deployment (🙏)
 - [ ] react router gototop setting

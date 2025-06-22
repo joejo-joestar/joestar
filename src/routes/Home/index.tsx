@@ -34,8 +34,8 @@ function Home() {
                 rel="noopener noreferrer"
               >
                 projects
-              </a>
-              . i have, and am still working on
+              </a>{" "}
+              i have, and am still working on
             </p>
             <ul>
               <li>

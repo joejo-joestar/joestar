@@ -10,7 +10,9 @@ npm install --save react-router prettier postcss autoprefixer eslint eslint-conf
 
 ## Todo
 
-- [ ] home
-- [ ] now
-- [ ] photos
-- [ ] contact
+- [x] home
+- [x] now
+- [x] photos
+  - [x] mobile view
+  - [ ] loading
+- [x] contact

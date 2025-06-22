@@ -31,3 +31,4 @@ npm i
 - [ ] custom import aliases ([refer here](https://github.com/mtcbpdcdubai/mtcbpdcdubai.github.io?tab=readme-ov-file#custom-import-alias))
 - [ ] loop lists
 - [ ] unsplash deployment
+- [ ] react router gototop setting

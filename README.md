@@ -2,9 +2,7 @@
 
 my portfolio website :3
 
-libraries used:
-
-to run this project, you need to have [Node.js](https://nodejs.org/) installed. And then run the following commands:
+to run this project locally, you need to have [Node.js](https://nodejs.org/) installed. And then run the following commands:
 
 ```bash
 npm i

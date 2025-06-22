@@ -28,3 +28,6 @@ npm i
   - [x] responsive
 - [x] contact
   - [ ] responsive
+- [ ] custom import aliases ([refer here](https://github.com/mtcbpdcdubai/mtcbpdcdubai.github.io?tab=readme-ov-file#custom-import-alias))
+- [ ] loop lists
+- [ ] unsplash deployment

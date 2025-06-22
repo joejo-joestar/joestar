@@ -1,18 +1,30 @@
 # joestar
 
-my portfolio :3
+my portfolio website :3
 
 libraries used:
 
+to run this project, you need to have [Node.js](https://nodejs.org/) installed. And then run the following commands:
+
 ```bash
-npm install --save react-router prettier postcss autoprefixer eslint eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks
+npm i
 ```
+
+## Special Thanks
+
+- [Oneko](https://github.com/adryd325/oneko.js/) for cat follow mouse real!.
+- [nownownow](https://nownownow.com/about) for the "now" page
 
 ## Todo
 
 - [x] home
-- [x] now
+  - [x] projects list
+  - [ ] responsive
+  - [x] oneko
 - [x] photos
-  - [x] mobile view
-  - [ ] loading
+  - [ ] responsive
+  - [ ] loading indicator
+- [x] now
+  - [x] responsive
 - [x] contact
+  - [ ] responsive

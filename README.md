@@ -10,7 +10,7 @@ npm i
 
 ## 🙏 Special Thanks
 
-- [Oneko](https://github.com/adryd325/oneko.js/) for cat follow mouse real!.
+- [Oneko](https://github.com/adryd325/oneko.js/) for cat follow mouse real!
 - [nownownow](https://nownownow.com/about) for the "now" page
 
  ---

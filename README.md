@@ -25,7 +25,7 @@ npm i
   - [ ] responsive
   - [ ] loading indicator
 - [x] [now](https://nownownow.com/about)
-  - [x] responsive
+  - [ ] responsive
 - [x] contact
   - [x] responsive
 - [x] custom import aliases ([refer here](https://github.com/mtcbpdcdubai/mtcbpdcdubai.github.io?tab=readme-ov-file#custom-import-alias) and [this answer on stackoverflow](https://stackoverflow.com/a/77249075))

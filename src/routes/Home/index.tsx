@@ -112,7 +112,13 @@ function Home() {
               </li>
               <li>
                 <p>
-                  font detection app
+                  <a
+                    href="https://fontdetector.streamlit.app/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    font detection app
+                  </a>
                   <br />
                   project for foundations of data science course.
                   <br />

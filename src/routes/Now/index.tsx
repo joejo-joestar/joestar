@@ -18,15 +18,15 @@ const Now = () => {
         {/* Working */}
         <div>
           <h2>
-            <em>Working.</em>
+            <em>working.</em>
           </h2>
           <ul>
             {workingList.map((item, index) => (
               <li key={index} className="item">
                 <a href={item.link} target="_blank" rel="noopener noreferrer">
-                  {item.title}
+                  {item.title.toLocaleLowerCase()}
                 </a>
-                : {item.description}
+                : {item.description.toLocaleLowerCase()}
               </li>
             ))}
           </ul>
@@ -35,15 +35,15 @@ const Now = () => {
         {/* Learning */}
         <div>
           <h2>
-            <em>Learning.</em>
+            <em>learning.</em>
           </h2>
           <ul>
             {learningList.map((item, index) => (
               <li key={index} className="item">
                 <a href={item.link} target="_blank" rel="noopener noreferrer">
-                  {item.title}
+                  {item.title.toLocaleLowerCase()}
                 </a>
-                : {item.description}
+                : {item.description.toLocaleLowerCase()}
               </li>
             ))}
           </ul>
@@ -52,7 +52,7 @@ const Now = () => {
         {/* Reading */}
         <div>
           <h2>
-            <em>Reading.</em>
+            <em>reading.</em>
           </h2>
           <ul>
             {readingList.map((book, index) => (

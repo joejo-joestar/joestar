@@ -74,9 +74,13 @@
   text-decoration: underline wavy var(--main-accent-color-sapphire) 2px;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .email-span {
     flex-direction: column;
     gap: 0;
+  }
+  .contact-body-content {
+    font-size: 1.3rem;
+    margin-bottom: 50px;
   }
 }

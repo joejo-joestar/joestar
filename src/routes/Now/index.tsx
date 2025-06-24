@@ -8,7 +8,7 @@ const Now = () => {
   return (
     <section className="now">
       <h1>Now.</h1>
-      <div className="body-content">
+      <div className="now-body-content">
         <span>check below to see what i'm up to right now!</span>
         <span>
           feel free to <NavLink to="/contact">reach out</NavLink> if you want to

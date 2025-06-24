@@ -9,7 +9,7 @@ const Contact = () => {
     <section className="contact">
       <h1 className="font-heading">Contact.</h1>
 
-      <div className="body-content">
+      <div className="contact-body-content">
         <span>
           you can find me on
           <ul className="contact-contact-links">

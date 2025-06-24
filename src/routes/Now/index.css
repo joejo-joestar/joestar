@@ -27,7 +27,7 @@
   color: var(--main-accent-color-green);
 }
 
-.body-content {
+.now-body-content {
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -39,4 +39,11 @@
 .body-content em {
   font-style: italic;
   color: var(--main-accent-color-sapphire);
+}
+
+@media (max-width: 768px) {
+  .now-body-content {
+    font-size: 1.3rem;
+    margin-bottom: 50px;
+  }
 }

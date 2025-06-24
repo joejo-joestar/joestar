@@ -70,3 +70,10 @@
 .projects > ul > li:hover {
   background-color: var(--main-surface-color);
 }
+
+@media (max-width: 768px) {
+  .home-body-content {
+    font-size: 1.3rem;
+    margin-bottom: 50px;
+  }
+}

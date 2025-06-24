@@ -7,7 +7,7 @@ const Now = () => {
   useScrollToTop();
   return (
     <section className="now">
-      <h1>Now</h1>
+      <h1>Now.</h1>
       <div className="body-content">
         <span>check below to see what i'm up to right now!</span>
         <span>
@@ -17,7 +17,9 @@ const Now = () => {
 
         {/* Working */}
         <div>
-          <h2>Working</h2>
+          <h2>
+            <em>Working.</em>
+          </h2>
           <ul>
             {workingList.map((item, index) => (
               <li key={index} className="item">
@@ -32,7 +34,9 @@ const Now = () => {
 
         {/* Learning */}
         <div>
-          <h2>Learning</h2>
+          <h2>
+            <em>Learning.</em>
+          </h2>
           <ul>
             {learningList.map((item, index) => (
               <li key={index} className="item">
@@ -47,7 +51,9 @@ const Now = () => {
 
         {/* Reading */}
         <div>
-          <h2>Reading</h2>
+          <h2>
+            <em>Reading.</em>
+          </h2>
           <ul>
             {readingList.map((book, index) => (
               <li key={index} className="item">

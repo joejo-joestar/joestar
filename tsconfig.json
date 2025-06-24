@@ -29,6 +29,9 @@
       "@routes/*": [
         "./src/routes/*"
       ],
+      "@shared/*": [
+        "./src/shared/*"
+      ],
     }
   }
 }

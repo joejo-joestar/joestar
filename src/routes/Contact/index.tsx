@@ -1,41 +1,13 @@
-import {
-  faInstagram,
-  faLinkedinIn,
-  faGithub,
-  faUnsplash,
-} from "@fortawesome/free-brands-svg-icons";
 import "./index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useScrollToTop } from "@/hooks/useScrollToTop";
-
-const socials: { name: string; icon: any; url: string }[] = [
-  {
-    name: "Instagram",
-    icon: faInstagram,
-    url: "https://www.instagram.com/ft._.joe/",
-  },
-  {
-    name: "Linkedin",
-    icon: faLinkedinIn,
-    url: "https://linkedin.com/in/joseph-cijo-n",
-  },
-  {
-    name: "Github",
-    icon: faGithub,
-    url: "https://github.com/joejo-joestar",
-  },
-  {
-    name: "Unsplash",
-    icon: faUnsplash,
-    url: "https://unsplash.com/@joejojoestar",
-  },
-];
+import { useScrollToTop } from "@hooks/useScrollToTop";
+import { socials } from "@shared/socialsList";
 
 const Contact = () => {
   useScrollToTop();
   return (
     <section className="contact">
-      <h1 className="font-heading">Contact</h1>
+      <h1 className="font-heading">Contact.</h1>
 
       <div className="body-content">
         <span>

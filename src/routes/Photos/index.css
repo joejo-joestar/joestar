@@ -57,3 +57,35 @@
     font-size: 1.2rem;
   }
 }
+
+/* loader */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.loader {
+  width: 120px;
+  aspect-ratio: 1;
+  --g: conic-gradient(
+    from -90deg at 20px 20px,
+    var(--main-accent-color-green) 90deg,
+    #0000 0
+  );
+  background:
+    var(--g),
+    var(--g) 20px 20px,
+    var(--g) 40px 40px;
+  background-size: 50% 50%;
+  animation: l15 1s infinite;
+}
+@keyframes l15 {
+  90%,
+  100% {
+    background-position:
+      -60px 60px,
+      -40px 80px,
+      -20px 100px;
+  }
+}

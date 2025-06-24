@@ -23,7 +23,7 @@ npm i
   - [x] [oneko](https://github.com/adryd325/oneko.js/)
 - [x] photos
   - [ ] responsive
-  - [ ] loading indicator
+  - [x] loading indicator
 - [x] [now](https://nownownow.com/about)
   - [ ] responsive
 - [x] contact

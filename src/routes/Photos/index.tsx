@@ -15,8 +15,11 @@ const Photos = () => {
   >([]);
   const [activeCategory, setActiveCategory] = useState("");
 
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     const collectionData = async () => {
+      setIsLoading(true);
       try {
         const fetechedCollections = await getCollections();
 
@@ -26,6 +29,7 @@ const Photos = () => {
           link: collection.links.html,
         }));
         setCollections(collectionList);
+
         if (collectionList.length > 0) {
           setActiveCategory(collectionList[0].title);
           const initialPhotos = await getPhotos({
@@ -37,10 +41,24 @@ const Photos = () => {
             unsplashLink: photo.links.html,
             category: collectionList[0].title,
           }));
+
+          await Promise.all(
+            photosArray.map((image: any) => {
+              return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.src = image.imageUrl;
+                img.onload = resolve;
+                img.onerror = reject;
+              });
+            })
+          );
+
           setImageArray(photosArray);
         }
       } catch (error) {
         console.error("Error fetching collections:", error);
+      } finally {
+        setIsLoading(false);
       }
     };
     collectionData();
@@ -54,10 +72,13 @@ const Photos = () => {
   });
 
   const handleSelectCategory = async (category: SetStateAction<string>) => {
+    setIsLoading(true);
     setActiveCategory(category);
+
     const selectedCollection = collectionList.find(
       (collection) => collection.title === category
     );
+
     if (selectedCollection) {
       try {
         const photos = await getPhotos({
@@ -69,10 +90,26 @@ const Photos = () => {
           unsplashLink: photo.links.html,
           category: selectedCollection.title,
         }));
+
+        await Promise.all(
+          photosArray.map((image: any) => {
+            return new Promise((resolve, reject) => {
+              const img = new Image();
+              img.src = image.imageUrl;
+              img.onload = resolve;
+              img.onerror = reject;
+            });
+          })
+        );
+
         setImageArray(photosArray);
       } catch (error) {
         console.error("Error fetching photos:", error);
+      } finally {
+        setIsLoading(false);
       }
+    } else {
+      setIsLoading(false);
     }
   };
 
@@ -83,14 +120,14 @@ const Photos = () => {
   return (
     <>
       <section className="photos">
-        <h1 className="">Photos</h1>
+        <h1 className="">Photos.</h1>
         <div className="photos-body-content">
           <span className="photos-body-content">
             here are some of the pictures i have taken over the years.
           </span>
           <span className="photos-body-content">
             <p>
-              you can find my work on{" "}
+              you can find a lot of my work on{" "}
               <a
                 href="http://unsplash.com/@joejojoestar/"
                 target="_blank"
@@ -106,9 +143,16 @@ const Photos = () => {
             activeCategory={activeCategory}
             onSelectCategory={handleSelectCategory}
           />
-          <div className="photos-grid">
-            <MainGallery images={filteredImages} />
-          </div>
+          {/* The loader is now controlled by the 'isLoading' state */}
+          {isLoading ? (
+            <div className="loader-container">
+              <div className="loader"></div>
+            </div>
+          ) : (
+            <div className="photos-grid">
+              <MainGallery images={filteredImages} />
+            </div>
+          )}
         </div>
       </section>
     </>

@@ -7,7 +7,7 @@ const Now = () => {
   useScrollToTop();
   return (
     <section className="now">
-      <h1>Now.</h1>
+      <h1>now.</h1>
       <div className="now-body-content">
         <span>check below to see what i'm up to right now!</span>
         <span>

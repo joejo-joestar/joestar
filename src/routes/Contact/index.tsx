@@ -7,8 +7,7 @@ const Contact = () => {
   useScrollToTop();
   return (
     <section className="contact">
-      <h1 className="font-heading">Contact.</h1>
-
+      <h1>contact.</h1>
       <div className="contact-body-content">
         <span>
           you can find me on

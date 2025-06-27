@@ -50,7 +50,7 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({
           isMobileButton ? "mobile-category-button" : ""
         }`}
       >
-        {category}
+        {category.toLowerCase()}
         <a
           href={links[index]}
           target="_blank"
@@ -80,7 +80,7 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-category-sidebar"
           >
-            {activeCategory}
+            {activeCategory.toLowerCase()}
           </button>
         </span>
 
@@ -90,7 +90,7 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({
           aria-hidden={!isMobileMenuOpen}
         >
           <div className="mobile-sidebar-header">
-            <h3>Collections</h3>
+            <h3>collections</h3>
             <button
               className="close-mobile-menu"
               onClick={() => setIsMobileMenuOpen(false)}

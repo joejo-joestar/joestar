@@ -28,13 +28,13 @@ const Navbar = () => {
             </div>
             <div className="nav-links font-heading">
               <NavLink to="/pics" style={activeStyle}>
-                Photos.
+                photos.
               </NavLink>
               <NavLink to="/nownownow" style={activeStyle}>
-                Now.
+                now.
               </NavLink>
               <NavLink to="/contact" style={activeStyle}>
-                Contact.
+                contact.
               </NavLink>
             </div>
           </>
@@ -102,21 +102,21 @@ const Navbar = () => {
                     style={activeStyle}
                     onClick={() => setIsOpen(false)}
                   >
-                    Photos.
+                    photos.
                   </NavLink>
                   <NavLink
                     to="/nownownow"
                     style={activeStyle}
                     onClick={() => setIsOpen(false)}
                   >
-                    Now.
+                    now.
                   </NavLink>
                   <NavLink
                     to="/contact"
                     style={activeStyle}
                     onClick={() => setIsOpen(false)}
                   >
-                    Contact.
+                    contact.
                   </NavLink>
                 </div>
               </div>

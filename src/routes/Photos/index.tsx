@@ -120,7 +120,7 @@ const Photos = () => {
   return (
     <>
       <section className="photos">
-        <h1 className="">Photos.</h1>
+        <h1>photos.</h1>
         <div className="photos-body-content">
           <span className="photos-body-content">
             here are some of the pictures i have taken over the years.

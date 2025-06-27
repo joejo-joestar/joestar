@@ -12,13 +12,13 @@ function Home() {
         </h1>
         <div className="home-body-content">
           <span>
-            i'm a <em>Computer Science</em> student in Birla Institue of
+            i'm a <em>computer science</em> student in Birla Institue of
             Technology and Science.
             <p>
               check out what i'm doing <NavLink to="/nownownow">now</NavLink>.
             </p>
             <p>
-              Head over to the <NavLink to="contact">contact</NavLink> page to
+              head over to the <NavLink to="contact">contact</NavLink> page to
               get in touch with me.
             </p>
           </span>

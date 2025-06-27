@@ -1,3 +1,4 @@
+@import url(catppuccin.css);
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
@@ -26,23 +27,6 @@
 }
 
 :root {
-  --main-bg-color: #181825;
-  --main-bg-color-secondary: #11111b;
-  --main-overlay-color: #6c7086;
-  --main-surface-color: #313244;
-  --main-text-color: #cdd6f4;
-  --main-text-color-secondary: #bac2de;
-  --main-text-color-tertiary: #a6adc8;
-  --main-text-color-quaternary: #9399b2;
-  --main-accent-color-rosewater: #f5e0dc;
-  --main-accent-color-mauve: #cba6f7;
-  --main-accent-color-red: #f38ba8;
-  --main-accent-color-peach: #fab387;
-  --main-accent-color-yellow: #f9e2af;
-  --main-accent-color-green: #a6e3a1;
-  --main-accent-color-teal: #94e2d5;
-  --main-accent-color-sapphire: #74c7ec;
-  --main-accent-color-blue: #89b4fa;
   line-height: 1.5;
   font-weight: 300;
   font-family: "Space Mono", Courier, monospace;
@@ -64,7 +48,16 @@
     -2px 0 1px rgba(0, 0, 0, 0.349),
     0 0 3px;
 }
-
+#root {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100%;
+}
 #root:before {
   content: "";
   z-index: 4010;
@@ -117,20 +110,6 @@
     top: 100%;
   }
 }
-
-/* 
-.font-heading {
-  font-family: "Chillax-Variable", "Noto Serif Display", sans-serif;
-  font-weight: 700;
-}
-.font-display {
-  font-family: "Noto Serif Display", mono;
-  font-weight: 900;
-}
-.font-body {
-  font-family: "Synonym-Variable", "Noto Serif Display", sans-serif;
-  font-weight: 400;
-} */
 
 /* For Firefox */
 ::-moz-selection {

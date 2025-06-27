@@ -31,7 +31,10 @@ footer p {
 }
 
 .social-links a:hover {
+  color: var(--main-accent-color-rosewater);
   background-color: transparent;
+  text-shadow: none;
+  box-shadow: none;
 }
 
 .fab {

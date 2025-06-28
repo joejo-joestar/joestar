@@ -10,6 +10,7 @@ import Home from "@routes/Home";
 import Photos from "@routes/Photos";
 import Now from "@routes/Now";
 import Contact from "@routes/Contact";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -33,5 +34,6 @@ createRoot(document.getElementById("root")!).render(
     </BrowserRouter>
     <div className="scanlines"></div>
     <Analytics />
+    <SpeedInsights />
   </StrictMode>
 );

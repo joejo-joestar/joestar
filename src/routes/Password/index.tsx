@@ -1,7 +1,7 @@
 import "./index.css";
-type Props = {};
+// type Props = {};
 
-const Password = (props: Props) => {
+const Password = () => {
   return (
     <section className="password">
       <label htmlFor="pass">Password?</label>

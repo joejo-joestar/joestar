@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import Oneko from "./oneko";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import { BrowserRouter, Route, Routes } from "react-router";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
@@ -10,11 +11,12 @@ import Home from "@routes/Home";
 import Photos from "@routes/Photos";
 import Now from "@routes/Now";
 import Contact from "@routes/Contact";
-import { SpeedInsights } from "@vercel/speed-insights/react";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Oneko />
+    <Analytics />
+    <SpeedInsights />
     <BrowserRouter>
       <Routes>
         <Route
@@ -33,7 +35,5 @@ createRoot(document.getElementById("root")!).render(
       </Routes>
     </BrowserRouter>
     <div className="scanlines"></div>
-    <Analytics />
-    <SpeedInsights />
   </StrictMode>
 );

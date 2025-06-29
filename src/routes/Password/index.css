@@ -1,0 +1,37 @@
+.password {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 1rem;
+    font-size: large;
+}
+
+.password label {
+    font-size: larger;
+    font-weight: 600;
+    color: var(--main-accent-color-red);
+}
+
+#pass {
+    width: 15rem;
+    height: 2rem;
+    padding: 0% 0.5rem;
+    border-radius: none;
+    color: var(--main-accent-color-sapphire);
+    font-family: "Space Mono", Courier, monospace;
+    font-size: medium;
+    font-weight: 300;
+    text-shadow:
+        2px 0 1px rgba(255, 255, 255, 0.151),
+        -2px 0 1px rgba(0, 0, 0, 0.349),
+        0 0 3px;
+    border: none;
+}
+
+#pass:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--main-surface-color);
+}

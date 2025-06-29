@@ -11,9 +11,9 @@ import Home from "@routes/Home";
 import Photos from "@routes/Photos";
 import Now from "@routes/Now";
 import Contact from "@routes/Contact";
+import MissingPage from "@routes/Missingno";
 // Secrets :3
 import Password from "@routes/Password";
-import MissingPage from "./routes/Missingno";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

@@ -11,6 +11,9 @@ import Home from "@routes/Home";
 import Photos from "@routes/Photos";
 import Now from "@routes/Now";
 import Contact from "@routes/Contact";
+// Secrets :3
+import Password from "@routes/Password";
+import MissingPage from "./routes/Missingno";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
@@ -32,6 +35,8 @@ createRoot(document.getElementById("root")!).render(
           <Route path="nownownow" element={<Now />} />
           <Route path="contact" element={<Contact />} />
         </Route>
+        <Route path="pasword" element={<Password />} />
+        <Route path="*" element={<MissingPage />} />
       </Routes>
     </BrowserRouter>
     <div className="scanlines"></div>

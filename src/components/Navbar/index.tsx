@@ -21,12 +21,15 @@ const Navbar = () => {
         {/* desktop */}
         {!isMobile && (
           <>
-            <div className="nav-home font-heading">
+            <div className="nav-home">
               <NavLink to="/" end>
-                Joe :3
+                <img
+                  src="https://www.gstatic.com/android/keyboard/emojikitchen/20210218/u1f636-u200d-u1f32b-ufe0f/u1f636-u200d-u1f32b-ufe0f_u1f431.png"
+                  alt="Joe :3"
+                />
               </NavLink>
             </div>
-            <div className="nav-links font-heading">
+            <div className="nav-links">
               <NavLink to="/pics" style={activeStyle}>
                 photos.
               </NavLink>
@@ -43,9 +46,12 @@ const Navbar = () => {
         {/* mobile */}
         {isMobile && (
           <>
-            <div className="nav-home font-heading">
+            <div className="nav-home">
               <NavLink to="/" onClick={() => setIsOpen(false)} end>
-                Joe :3
+                <img
+                  src="https://www.gstatic.com/android/keyboard/emojikitchen/20210218/u1f636-u200d-u1f32b-ufe0f/u1f636-u200d-u1f32b-ufe0f_u1f431.png"
+                  alt="Joe :3"
+                />
               </NavLink>
             </div>
             {/* Unified Open/Close Button */}
@@ -96,7 +102,7 @@ const Navbar = () => {
               }}
             >
               <div className="sidebar-content">
-                <div className="nav-links-mobile font-heading">
+                <div className="nav-links-mobile">
                   <NavLink
                     to="/pics"
                     style={activeStyle}

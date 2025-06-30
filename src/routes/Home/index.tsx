@@ -8,7 +8,13 @@ function Home() {
     <>
       <section className="home">
         <h1>
-          hi, i'm <span className="display-heading">Joe</span>!
+          <img
+            src="https://raw.githubusercontent.com/joejo-joestar/joestar/5c0d47baa1b1bc02dace9f882fd2d6ba92e0e0db/src/assets/pixhi.png"
+            alt="o7"
+          />
+          <span>
+            hi, i'm <span className="display-heading">Joe</span>!
+          </span>
         </h1>
         <div className="home-body-content">
           <span>

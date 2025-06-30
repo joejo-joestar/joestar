@@ -7,7 +7,13 @@ const Now = () => {
   useScrollToTop();
   return (
     <section className="now">
-      <h1>now.</h1>
+      <h1>
+        <img
+          src="https://raw.githubusercontent.com/joejo-joestar/joestar/8ad250ff86a6254c58bb2072f0dc163b48b1d5b5/src/assets/pixnow.png"
+          alt="now."
+        />
+        now.
+      </h1>
       <div className="now-body-content">
         <span>check below to see what i'm up to right now!</span>
         <span>

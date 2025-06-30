@@ -10,6 +10,19 @@
   min-height: 100vh;
 }
 
+.home h1 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-weight: 600;
+  font-size: 3.3rem;
+}
+
+.home img {
+  height: 4.5rem;
+  object-fit: cover;
+}
+
 .display-heading {
   font-style: italic;
   color: var(--main-accent-color-mauve);
@@ -23,10 +36,12 @@
   margin: 0;
   font-size: 1.5rem;
 }
+
 .home-body-content span {
   font-weight: 500;
   color: var(--main-text-color-secondary);
 }
+
 .home-body-content span em {
   font-style: italics;
   color: var(--main-accent-color-sapphire);
@@ -41,22 +56,26 @@
 .projects-heading {
   color: var(--main-accent-color-rosewater);
 }
+
 .projects {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.projects > ul {
+
+.projects>ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-.projects > ul > li {
+
+.projects>ul>li {
   padding: 0.5rem;
   margin: 0.5rem 0;
   transition: background-color 250ms ease-in-out;
 }
-.projects > ul > li:hover {
+
+.projects>ul>li:hover {
   background-color: var(--main-surface-color);
 }
 

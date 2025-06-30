@@ -120,7 +120,13 @@ const Photos = () => {
   return (
     <>
       <section className="photos">
-        <h1>photos.</h1>
+        <h1>
+          <img
+            src="https://raw.githubusercontent.com/joejo-joestar/joestar/8ad250ff86a6254c58bb2072f0dc163b48b1d5b5/src/assets/pixpics.png"
+            alt="photos."
+          />
+          photos.
+        </h1>
         <div className="photos-body-content">
           <span className="photos-body-content">
             here are some of the pictures i have taken over the years.

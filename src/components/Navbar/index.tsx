@@ -24,7 +24,7 @@ const Navbar = () => {
             <div className="nav-home">
               <NavLink to="/" end>
                 <img
-                  src="https://github.com/joejo-joestar/joestar/blob/fc38de228fac77efad2318e634293e7f36ceebce/public/pixlogo.png"
+                  src="https://raw.githubusercontent.com/joejo-joestar/joestar/fc38de228fac77efad2318e634293e7f36ceebce/public/pixlogo.png"
                   alt="Joe :3"
                 />
               </NavLink>
@@ -49,7 +49,7 @@ const Navbar = () => {
             <div className="nav-home">
               <NavLink to="/" onClick={() => setIsOpen(false)} end>
                 <img
-                  src="https://github.com/joejo-joestar/joestar/blob/fc38de228fac77efad2318e634293e7f36ceebce/public/pixlogo.png"
+                  src="https://raw.githubusercontent.com/joejo-joestar/joestar/fc38de228fac77efad2318e634293e7f36ceebce/public/pixlogo.png"
                   alt="Joe :3"
                 />
               </NavLink>

@@ -9,6 +9,7 @@ interface ImageProps {
 interface GalleryProps {
   images: ImageProps[];
 }
+
 export const Gallery: React.FC<GalleryProps> = ({ images }) => {
   return (
     <div className="gallery">

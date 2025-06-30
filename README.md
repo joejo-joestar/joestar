@@ -1,5 +1,9 @@
 # 🌐 joestar
 
+<p align="center">
+    <img src="https://www.gstatic.com/android/keyboard/emojikitchen/20210218/u1f636-u200d-u1f32b-ufe0f/u1f636-u200d-u1f32b-ufe0f_u1f431.png" alt="car in clouds" title="car in clouds" width="128">
+</p>
+
 my portfolio website :3
 
 to run this project locally, you need to have [Node.js](https://nodejs.org/) installed. And then run the following commands:
@@ -13,8 +17,9 @@ npm i
 - [Oneko](https://github.com/adryd325/oneko.js/) for cat follow mouse real!
 - [nownownow.com](https://nownownow.com/about) for the "now" page
 - [catppuccin](https://catppuccin.com/) for the color scheme
+- [Emoji Kitchen](https://fonts.google.com/noto/specimen/Noto+Color+Emoji) for the remixed emojis
 
- ---
+---
 
 ## 📋 Todo
 

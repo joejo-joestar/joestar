@@ -23,7 +23,10 @@ const Navbar = () => {
           <>
             <div className="nav-home">
               <NavLink to="/" end>
-                <img src="./public/pixlogo.png" alt="Joe :3" />
+                <img
+                  src="https://github.com/joejo-joestar/joestar/blob/fc38de228fac77efad2318e634293e7f36ceebce/public/pixlogo.png"
+                  alt="Joe :3"
+                />
               </NavLink>
             </div>
             <div className="nav-links">
@@ -45,7 +48,10 @@ const Navbar = () => {
           <>
             <div className="nav-home">
               <NavLink to="/" onClick={() => setIsOpen(false)} end>
-                <img src="./public/pixlogo.png" alt="Joe :3" />
+                <img
+                  src="https://github.com/joejo-joestar/joestar/blob/fc38de228fac77efad2318e634293e7f36ceebce/public/pixlogo.png"
+                  alt="Joe :3"
+                />
               </NavLink>
             </div>
             {/* Unified Open/Close Button */}

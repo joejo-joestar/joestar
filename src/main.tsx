@@ -31,11 +31,11 @@ createRoot(document.getElementById("root")!).render(
           }
         >
           <Route path="/" element={<Home />} />
-          <Route path="/pics" element={<Photos />} />
-          <Route path="/nownownow" element={<Now />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="pics" element={<Photos />} />
+          <Route path="nownownow" element={<Now />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
-        <Route path="/pasword" element={<Password />} />
+        <Route path="pasword" element={<Password />} />
         <Route path="*" element={<MissingPage />} />
       </Routes>
     </BrowserRouter>

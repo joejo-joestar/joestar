@@ -4,6 +4,6 @@
     { "src": "/nownownow", "dest": "/" },
     { "src": "/contact", "dest": "/" },
     { "src": "/", "dest": "/" },
-    { "src": "/(.*)", "status": 404, "dest": "/" }
+    { "src": "/(.*)", "status": 404, "dest": "/index.html" }
   ]
 }

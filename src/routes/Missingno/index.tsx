@@ -5,7 +5,7 @@ const MissingPage = () => {
   return (
     <section className="missing-page">
       <img
-        src="https://www.gstatic.com/android/keyboard/emojikitchen/20230301/u1f623/u1f623_u1f431.png"
+        src="https://raw.githubusercontent.com/joejo-joestar/joestar/8088435f433a56d8bc6dbf45c871dea1e615d75a/src/assets/pix404.png"
         className="missingno"
         alt="Missing Page"
       />

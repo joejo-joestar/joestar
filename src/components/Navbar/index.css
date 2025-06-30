@@ -6,7 +6,7 @@ nav {
       transparent);
   backdrop-filter: blur(5px);
   top: 0;
-  padding: 2% 5%;
+  padding: 1.5% 5%;
   margin: auto;
   min-width: 100%;
   display: flex;
@@ -26,7 +26,7 @@ nav {
 }
 
 .nav-home img {
-  width: 3.25rem;
+  width: 4.5rem;
   color: var(--main-accent-color-mauve);
 }
 

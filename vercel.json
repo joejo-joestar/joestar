@@ -4,5 +4,6 @@
     { "src": "/nownownow", "dest": "/" },
     { "src": "/contact", "dest": "/" },
     { "src": "/", "dest": "/" }
-  ]
+  ],
+  "rewrites": [{ "source": "/(.*)", "destination": "/" }]
 }

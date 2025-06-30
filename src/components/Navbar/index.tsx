@@ -23,10 +23,7 @@ const Navbar = () => {
           <>
             <div className="nav-home">
               <NavLink to="/" end>
-                <img
-                  src="https://www.gstatic.com/android/keyboard/emojikitchen/20210218/u1f636-u200d-u1f32b-ufe0f/u1f636-u200d-u1f32b-ufe0f_u1f431.png"
-                  alt="Joe :3"
-                />
+                <img src="./public/pixlogo.png" alt="Joe :3" />
               </NavLink>
             </div>
             <div className="nav-links">
@@ -48,10 +45,7 @@ const Navbar = () => {
           <>
             <div className="nav-home">
               <NavLink to="/" onClick={() => setIsOpen(false)} end>
-                <img
-                  src="https://www.gstatic.com/android/keyboard/emojikitchen/20210218/u1f636-u200d-u1f32b-ufe0f/u1f636-u200d-u1f32b-ufe0f_u1f431.png"
-                  alt="Joe :3"
-                />
+                <img src="./public/pixlogo.png" alt="Joe :3" />
               </NavLink>
             </div>
             {/* Unified Open/Close Button */}

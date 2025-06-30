@@ -1,7 +1,7 @@
 # 🌐 joestar
 
 <p align="center">
-    <img src="https://www.gstatic.com/android/keyboard/emojikitchen/20210218/u1f636-u200d-u1f32b-ufe0f/u1f636-u200d-u1f32b-ufe0f_u1f431.png" alt="car in clouds" title="car in clouds" width="128">
+    <img src="./public/pixlogo.png" alt="car in clouds" title="car in clouds" width="128" style="image-rendering: pixelated;">
 </p>
 
 my portfolio website :3

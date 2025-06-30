@@ -3,7 +3,6 @@
     { "src": "/pics", "dest": "/" },
     { "src": "/nownownow", "dest": "/" },
     { "src": "/contact", "dest": "/" },
-    { "src": "/", "dest": "/" },
-    { "src": "/(.*)", "dest": "/" }
+    { "src": "/", "dest": "/" }
   ]
 }

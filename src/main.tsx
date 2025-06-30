@@ -15,6 +15,8 @@ import MissingPage from "@routes/Missingno";
 // Secrets :3
 import Password from "@routes/Password";
 
+const hehe = "\x70\x61\x73\x6f\x77\x72\x64";
+
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Oneko />
@@ -35,7 +37,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="nownownow" element={<Now />} />
           <Route path="contact" element={<Contact />} />
         </Route>
-        <Route path="pasword" element={<Password />} />
+        <Route path={hehe} element={<Password />} />
         <Route path="*" element={<MissingPage />} />
       </Routes>
     </BrowserRouter>

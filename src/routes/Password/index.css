@@ -35,3 +35,26 @@
     outline: none;
     box-shadow: 0 0 0 2px var(--main-surface-color);
 }
+
+button {
+    width: 6rem;
+    height: 2rem;
+    border-radius: none;
+    color: var(--main-accent-color-mauve);
+    font-family: "Space Mono", Courier, monospace;
+    font-size: large;
+    font-weight: 400;
+    text-shadow:
+        2px 0 1px rgba(255, 255, 255, 0.151),
+        -2px 0 1px rgba(0, 0, 0, 0.349),
+        0 0 3px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--main-surface-color);
+    color: var(--main-accent-color-red);
+    transition: all 0.3s ease-in-out;
+}

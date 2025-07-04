@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "aaron-bond.better-comments",
+        "github.copilot-chat",
+        "github.copilot",
+        "dsznajder.es7-react-js-snippets",
+        "oderwat.indent-rainbow",
+        "christian-kohler.npm-intellisense",
+        "esbenp.prettier-vscode",
+        "yoavbls.pretty-ts-errors",
+        "mutantdino.resourcemonitor",
+        "tonybaloney.vscode-pets"
+    ]
+}

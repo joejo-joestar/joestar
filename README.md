@@ -10,6 +10,7 @@ to run this project locally, you need to have [Node.js](https://nodejs.org/) ins
 
 ```bash
 npm i
+npm run dev
 ```
 
 ## 🙏 Special Thanks

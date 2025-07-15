@@ -9,6 +9,7 @@
         "esbenp.prettier-vscode",
         "yoavbls.pretty-ts-errors",
         "mutantdino.resourcemonitor",
-        "tonybaloney.vscode-pets"
+        "tonybaloney.vscode-pets",
+        "ms-vsliveshare.vsliveshare"
     ]
 }

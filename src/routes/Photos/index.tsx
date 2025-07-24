@@ -128,10 +128,10 @@ const Photos = () => {
           photos.
         </h1>
         <div className="photos-body-content">
-          <span className="photos-body-content">
+          <span>
             here are some of the pictures i have taken over the years.
           </span>
-          <span className="photos-body-content">
+          <span>
             <p>
               you can find a lot of my work on{" "}
               <a

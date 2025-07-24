@@ -41,6 +41,10 @@
 }
 
 @media (max-width: 768px) {
+  .now {
+    margin-top: 15%;
+  }
+
   .now-body-content {
     font-size: 1.3rem;
     margin-bottom: 50px;

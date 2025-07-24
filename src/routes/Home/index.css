@@ -63,23 +63,27 @@
   width: 100%;
 }
 
-.projects>ul {
+.projects > ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.projects>ul>li {
+.projects > ul > li {
   padding: 0.5rem;
   margin: 0.5rem 0;
   transition: background-color 250ms ease-in-out;
 }
 
-.projects>ul>li:hover {
+.projects > ul > li:hover {
   background-color: var(--main-surface-color);
 }
 
 @media (max-width: 768px) {
+  .home {
+    margin-top: 15%;
+  }
+
   .home-body-content {
     font-size: 1.3rem;
     margin-bottom: 50px;

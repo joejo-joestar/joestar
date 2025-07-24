@@ -74,6 +74,10 @@
 }
 
 @media (max-width: 768px) {
+  .contact {
+    margin-top: 15%;
+  }
+
   .email-span {
     flex-direction: column;
     gap: 0;

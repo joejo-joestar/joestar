@@ -128,21 +128,23 @@ const Photos = () => {
           photos.
         </h1>
         <div className="photos-body-content">
-          <span>
-            here are some of the pictures i have taken over the years.
-          </span>
-          <span>
-            <p>
-              you can find a lot of my work on{" "}
-              <a
-                href="http://unsplash.com/@joejojoestar/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Unsplash
-              </a>
-            </p>
-          </span>
+          <div>
+            <span>
+              here are some of the pictures i have taken over the years.
+            </span>
+            <span>
+              <p>
+                you can find a lot of my work on{" "}
+                <a
+                  href="http://unsplash.com/@joejojoestar/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Unsplash
+                </a>
+              </p>
+            </span>
+          </div>
           <CategoryMenu
             categories={categories}
             links={links}

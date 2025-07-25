@@ -193,7 +193,7 @@ button.mobile-menu-trigger {
   font-family: "Space Mono", Courier, monospace;
   width: 100%;
   text-align: left;
-  padding: 0.5rem 1rem;
+  padding: 2rem 1rem;
   font-size: 16px;
   color: var(--main-text-color-quaternary);
   text-shadow:
@@ -205,7 +205,6 @@ button.mobile-menu-trigger {
   cursor: pointer;
   min-width: fit-content;
   position: relative;
-
   display: flex;
   justify-content: space-between;
   align-items: center;

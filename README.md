@@ -22,6 +22,57 @@ npm run dev
 
 ---
 
+## 🗂️ Project Structure
+
+```plaintext
+joestar
+├── eslint.config.js  # ESLint configuration
+├── index.html        # Main HTML entry point
+├── package.json      # Project metadata and dependencies
+├── README.md         # Project documentation
+├── tsconfig*.json    # TypeScript configuration files
+├── vercel.json       # Vercel deployment config
+├── vite.config.ts    # Vite build tool config
+├── public/          # Static assets
+│   ├── oneko.gif    # Cat animation asset
+│   ├── oneko.js     # Oneko cat script
+│   └── pixlogo.png  # Logo image
+└── src/                # Source code
+    ├── catppuccin.css  # Color theme CSS
+    ├── index.css       # Global styles
+    ├── main.tsx        # App entry point
+    ├── oneko.ts        # Oneko integration
+    ├── vite-env.d.ts   # Vite environment types
+    ├── api/             # API utilities
+    │   └── unsplash.ts  # Unsplash API integration
+    ├── assets/             # Image assets
+    │   ├── pix404.png      # 404 image
+    │   ├── pixcontact.png  # Contact image
+    │   ├── pixhi.png       # Greeting image
+    │   ├── pixnow.png      # Now page image
+    │   └── pixpics.png     # Photos image
+    ├── components/        # Reusable UI components
+    │   ├── CategoryMenu/  # Category menu component
+    │   ├── Footer/        # Footer component
+    │   ├── MainGallery/   # Main gallery component
+    │   └── Navbar/        # Navigation bar component
+    ├── hooks/                   # Custom React hooks
+    │   ├── useHashPassword.tsx  # Password hashing hook
+    │   ├── useMediaQuery.tsx    # Media query hook
+    │   └── useScrollToTop.tsx   # Scroll-to-top hook
+    ├── routes/         # App pages/routes
+    │   ├── Contact/    # Contact page
+    │   ├── Home/       # Home page
+    │   ├── Missingno/  # 404 page
+    │   ├── Now/        # Now page
+    │   ├── Password/   # Password page
+    │   └── Photos/     # Photos page
+    └── shared/                   # Shared utilities/data
+        └── socialsList.ts        # Social links list
+```
+
+---
+
 ## 📋 Todo
 
 - [x] home

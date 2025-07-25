@@ -1,4 +1,4 @@
-# 🌐 joestar
+<h1 align="center">🌐 joestar</h1>
 
 <p align="center">
     <img src="./public/pixlogo.png" alt="car in clouds" title="car in clouds" width="128" style="image-rendering: pixelated;">
@@ -67,8 +67,8 @@ joestar
     │   ├── Now/        # Now page
     │   ├── Password/   # Password page
     │   └── Photos/     # Photos page
-    └── shared/                   # Shared utilities/data
-        └── socialsList.ts        # Social links list
+    └── shared/             # Shared utilities/data
+        └── socialsList.ts  # Social links list
 ```
 
 ---

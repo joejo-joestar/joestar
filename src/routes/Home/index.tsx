@@ -75,6 +75,33 @@ function Home() {
               <li>
                 <p>
                   <a
+                    href="https://github.com/joejo-joestar/OilGas-Wire"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    oilgas-wire
+                  </a>
+                  <br />a simple google apps script project to automate a
+                  newsletter and aggregates news from rss/atom feeds into a
+                  google sheet.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a
+                    href="https://github.com/joejo-joestar/Sheets-Syntax"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    sheets-syntax
+                  </a>
+                  <br />a simple language support extension for google sheet
+                  (and other spreadsheets) formulas.
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a
                     href="https://github.com/SreenikethanI/Mediathon2024-Logitik"
                     target="_blank"
                     rel="noopener noreferrer"

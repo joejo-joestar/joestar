@@ -14,7 +14,7 @@ export const socials: { name: string; icon: any; url: string }[] = [
   {
     name: "Linkedin",
     icon: faLinkedinIn,
-    url: "https://linkedin.com/in/joseph-cijo-n",
+    url: "https://linkedin.com/in/joseph-cijo",
   },
   {
     name: "Github",

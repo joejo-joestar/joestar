@@ -15,6 +15,17 @@ const Now = () => {
         now.
       </h1>
       <div className="now-body-content">
+        <span>
+          i'm currently working at{" "}
+          <a
+            href="https://alshirawiequipment.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Al Shirawi Equipment
+          </a>{" "}
+          as a production engineering intern.
+        </span>
         <span>check below to see what i'm up to right now!</span>
         <span>
           feel free to <NavLink to="/contact">reach out</NavLink> if you want to

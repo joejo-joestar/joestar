@@ -11,6 +11,7 @@ import Home from "@routes/Home";
 import Photos from "@routes/Photos";
 import Now from "@routes/Now";
 import Contact from "@routes/Contact";
+import Projects from "@routes/Projects";
 import MissingPage from "@routes/Missingno";
 // Secrets :3
 import Password from "@routes/Password";
@@ -33,6 +34,7 @@ createRoot(document.getElementById("root")!).render(
           }
         >
           <Route path="/" element={<Home />} />
+          <Route path="projects" element={<Projects />} />
           <Route path="pics" element={<Photos />} />
           <Route path="nownownow" element={<Now />} />
           <Route path="contact" element={<Contact />} />

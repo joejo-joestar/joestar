@@ -80,6 +80,22 @@
   }
 }
 
+/* Force single column when requested */
+.projects-container.single-col {
+  display: flex !important;
+  flex-direction: column !important;
+  column-count: 1 !important;
+  gap: 1px;
+}
+
+@media (min-width: 768px) {
+  .projects-container.single-col {
+    display: flex !important;
+    flex-direction: column !important;
+    column-count: 1 !important;
+  }
+}
+
 @media (min-width: 1200px) {
   .projects-container {
     column-count: 2;

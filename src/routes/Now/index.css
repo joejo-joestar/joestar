@@ -35,6 +35,52 @@
   width: 100%;
 }
 
+/* Layout: make the "now" sections render as a 4-cell grid on wide screens
+   falling back to a single column on small screens and two columns on tablet. */
+.now-container {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  grid-template-columns: 1fr;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .now-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Style each cell so it reads as its own box with the heading preserved inside */
+.now-container > * {
+  background: transparent; /* keep existing site background, override if needed */
+  padding: 0.5rem 0.5rem 1rem 0.5rem;
+  min-height: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.now-container h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+/* Each column groups two stacked containers vertically */
+.now-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.now-column > * {
+  /* inner cells keep a column layout */
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* padding: 0.25rem 0.5rem; */
+}
+
 .body-content em {
   font-style: italic;
   color: var(--main-accent-color-sapphire);

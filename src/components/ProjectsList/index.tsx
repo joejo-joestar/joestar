@@ -12,14 +12,19 @@ interface RepoProps {
 interface ProjectsProps {
   repos: RepoProps[];
   limit?: number;
+  singleCol?: boolean;
 }
 
-export const Projects: React.FC<ProjectsProps> = ({ repos, limit }) => {
+export const Projects: React.FC<ProjectsProps> = ({
+  repos,
+  limit,
+  singleCol,
+}) => {
   const displayedRepos =
     typeof limit === "number" && limit > 0 ? repos.slice(0, limit) : repos;
 
   return (
-    <div className="projects-container">
+    <div className={`projects-container${singleCol ? " single-col" : ""}`}>
       {displayedRepos.map((repo) => (
         <div key={repo.id} className="repo-card-container">
           <div className="repo-card">

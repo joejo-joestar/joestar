@@ -3,11 +3,9 @@ import { useEffect, useState } from "react";
 import "./index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCirclePause,
   faCompactDisc,
   faExclamationCircle,
   faPowerOff,
-  faRecordVinyl,
 } from "@fortawesome/free-solid-svg-icons";
 
 // shape of the data returned by the API when a song is playing
@@ -163,14 +161,10 @@ const NowPlaying = () => {
       </div>
       {/* Icon displayed based on playerState */}
       <div className="now-playing-state">
-        {playerState === "PLAY" ? (
-          <div /* Sound bar animation */ className="sound-wave playing">
-            <span />
-            <span />
-            <span />
-          </div>
-        ) : playerState === "PAUSE" ? (
-          <div /* Sound bar animation */ className="sound-wave paused">
+        {playerState === "PLAY" || playerState === "PAUSE" ? (
+          <div
+            /* Sound bar animation */ className={`sound-wave ${playerState === "PLAY" ? "playing" : "paused"}`}
+          >
             <span />
             <span />
             <span />

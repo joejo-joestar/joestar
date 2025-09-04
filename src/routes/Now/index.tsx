@@ -2,6 +2,7 @@ import { NavLink } from "react-router";
 import "./index.css";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { workingList, learningList, readingList } from "./lists";
+import NowPlaying from "@/components/NowPlaying";
 
 const Now = () => {
   useScrollToTop();
@@ -31,6 +32,8 @@ const Now = () => {
           feel free to <NavLink to="/contact">reach out</NavLink> if you want to
           collaborate!
         </span>
+
+        <NowPlaying />
 
         {/* Working */}
         <div>

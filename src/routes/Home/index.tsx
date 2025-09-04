@@ -66,7 +66,7 @@ function Home() {
           <div className="bar" />
           <br />
 
-          <span className="projects">
+          <span className="projects-body-content">
             <p className="projects-heading">
               here are some of the <Link to="projects">projects</Link> i have,
               and am still working on

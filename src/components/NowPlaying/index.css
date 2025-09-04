@@ -1,7 +1,6 @@
 .now-playing-card {
   display: flex;
   align-items: center;
-  min-width: 50%;
   height: 100px;
   justify-content: space-between;
   padding: 10px;

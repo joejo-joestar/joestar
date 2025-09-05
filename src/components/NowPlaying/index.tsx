@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCompactDisc,
   faExclamationCircle,
-  faPowerOff,
+  faMoon,
 } from "@fortawesome/free-solid-svg-icons";
 
 // shape of the data returned by the API when a song is playing
@@ -39,19 +39,15 @@ const NowPlaying = () => {
     fetchNowPlaying();
     const interval = setInterval(() => {
       fetchNowPlaying();
-    }, 1000);
+    }, 40000); // poll every 40 seconds
 
     // cleanup interval on unmount
     return () => clearInterval(interval);
   }, []);
 
-  //Setting default values for the listener's current state and the duration of the song played
+  //Setting default values for the listener's current state
   let playerState = "";
-  let secondsPlayed = 0,
-    minutesPlayed = 0,
-    secondsTotal = 0,
-    minutesTotal = 0;
-  let albumImageUrl = "./images/albumCover.png";
+  let albumImageUrl = "";
   let title = "";
   let artist = "";
 
@@ -63,28 +59,14 @@ const NowPlaying = () => {
     //Used while displaying a soundbar/pause icon on the widget
     playerState = nowPlaying.isPlaying ? "PLAY" : "PAUSE";
 
-    //Converting the playback duration from milliseconds to minutes and seconds
-    secondsPlayed = Math.floor((nowPlaying.timePlayed ?? 0) / 1000);
-    minutesPlayed = Math.floor(secondsPlayed / 60);
-    secondsPlayed = secondsPlayed % 60;
-
-    //Converting the song duration from milliseconds to minutes and seconds
-    secondsTotal = Math.floor((nowPlaying.timeTotal ?? 0) / 1000);
-    minutesTotal = Math.floor(secondsTotal / 60);
-    secondsTotal = secondsTotal % 60;
-
     albumImageUrl = nowPlaying.albumImageUrl ?? albumImageUrl;
     title = nowPlaying.title ?? "";
     artist = nowPlaying.artist ?? "";
   } else if (nowPlaying === "Currently Not Playing") {
     playerState = "OFFLINE";
-  } else {
   }
 
-  //Used to set 0 as padding when it is a single digit number
-  const pad = (n: number) => {
-    return n < 10 ? "0" + n : String(n);
-  };
+  // no timestamp helper needed anymore
 
   return (
     //Depending on the value of playerState, the href, album image and icons are updated
@@ -117,43 +99,49 @@ const NowPlaying = () => {
           ) : (
             <>
               <div
-                className={`now-playing-title ${title.length > 20 ? "marquee-content" : " "}`}
+                className={`now-playing-title ${title.length > 20 ? "marquee-content" : ""}`}
               >
-                {playerState === "PLAY" || playerState === "PAUSE" ? (
-                  <a
-                    href={
-                      nowPlaying && typeof nowPlaying !== "string"
-                        ? nowPlaying.songUrl
-                        : ""
-                    }
-                  >
-                    {title}
-                  </a>
-                ) : (
-                  title
-                )}
+                <span className="now-playing-text">
+                  {playerState === "PLAY" || playerState === "PAUSE" ? (
+                    <a
+                      href={
+                        nowPlaying && typeof nowPlaying !== "string"
+                          ? nowPlaying.songUrl
+                          : ""
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {title}
+                    </a>
+                  ) : (
+                    <span>{title}</span>
+                  )}
+                </span>
               </div>
               {/* Artist displayed based on playerState */}
-              <div className="now-playing-artist">
-                {playerState === "PLAY" || playerState === "PAUSE" ? (
-                  <a
-                    href={
-                      nowPlaying && typeof nowPlaying !== "string"
-                        ? nowPlaying.artistUrl
-                        : ""
-                    }
-                  >
-                    {artist}
-                  </a>
-                ) : (
-                  artist
-                )}
+              <div
+                className={`now-playing-artist ${artist.length > 20 ? "marquee-content" : ""}`}
+              >
+                <span className="now-playing-text">
+                  {playerState === "PLAY" || playerState === "PAUSE" ? (
+                    <a
+                      href={
+                        nowPlaying && typeof nowPlaying !== "string"
+                          ? nowPlaying.artistUrl
+                          : ""
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {artist}
+                    </a>
+                  ) : (
+                    <span>{artist}</span>
+                  )}
+                </span>
               </div>
-              {/* Song Timer displayed based on playerState */}
-              <div className="now-playing-time">
-                {pad(minutesPlayed)}:{pad(secondsPlayed)} / {pad(minutesTotal)}:
-                {pad(secondsTotal)}
-              </div>
+              {/* timestamps removed */}
             </>
           )}
           {/* Song Title displayed based on playerState */}
@@ -171,7 +159,7 @@ const NowPlaying = () => {
           </div>
         ) : playerState === "OFFLINE" ? (
           <FontAwesomeIcon
-            icon={faPowerOff}
+            icon={faMoon}
             size="2x"
             color="var(--main-accent-color-green)"
           />

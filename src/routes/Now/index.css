@@ -35,8 +35,6 @@
   width: 100%;
 }
 
-/* Layout: make the "now" sections render as a 4-cell grid on wide screens
-   falling back to a single column on small screens and two columns on tablet. */
 .now-container {
   display: grid;
   gap: 1rem;
@@ -54,9 +52,8 @@
   }
 }
 
-/* Style each cell so it reads as its own box with the heading preserved inside */
 .now-container > * {
-  background: transparent; /* keep existing site background, override if needed */
+  background: transparent;
   padding: 0.5rem 0.5rem 1rem 0.5rem;
   min-height: 6rem;
   display: flex;
@@ -69,7 +66,6 @@
   font-size: 1.25rem;
 }
 
-/* Each column groups two stacked containers vertically */
 .now-column {
   display: flex;
   flex-direction: column;
@@ -78,11 +74,9 @@
 }
 
 .now-column > * {
-  /* inner cells keep a column layout */
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  /* padding: 0.25rem 0.5rem; */
 }
 
 .body-content em {
@@ -103,6 +97,5 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    /* align-items: center; */
   }
 }

@@ -42,7 +42,7 @@ const Projects = () => {
       <section className="projects">
         <h1>
           <img
-            src="https://github.com/joejo-joestar/joestar/blob/90e30b6a2562dabad67bfa19e118f86b6bd92fff/src/assets/pixprojects.png"
+            src="https://raw.githubusercontent.com/joejo-joestar/joestar/90e30b6a2562dabad67bfa19e118f86b6bd92fff/src/assets/pixprojects.png"
             alt="projects."
           />
           projects.

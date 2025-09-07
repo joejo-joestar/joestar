@@ -4,7 +4,7 @@ import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { learningList, readingList } from "./lists";
 import NowPlaying from "@/components/NowPlaying";
 import { useEffect, useState } from "react";
-import { getRepos, repoBlacklist } from "@/api/repos";
+import { getRepos, repoBlacklist } from "@/api/github";
 import ProjectsList from "@/components/ProjectsList";
 
 const Now = () => {

@@ -3,7 +3,7 @@ import "./index.css";
 import { useScrollToTop } from "@hooks/useScrollToTop";
 import ProjectsList from "@/components/ProjectsList";
 import { useEffect, useState } from "react";
-import { getRepos, repoBlacklist } from "@/api/repos";
+import { getRepos, repoBlacklist } from "@/api/github";
 
 function Home() {
   useScrollToTop();

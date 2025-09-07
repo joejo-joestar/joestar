@@ -1,7 +1,7 @@
 import "./index.css";
 import { useEffect, useState } from "react";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
-import { getRepos, repoBlacklist } from "@/api/repos";
+import { getRepos, repoBlacklist } from "@/api/github";
 import ProjectsList from "@/components/ProjectsList";
 
 const Projects = () => {

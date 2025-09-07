@@ -1,0 +1,237 @@
+.now-playing-card {
+  display: grid;
+  grid-template-columns: 64px 1fr 48px;
+  column-gap: 12px;
+  align-items: center;
+  padding: 8px;
+  height: auto;
+  background: transparent;
+}
+
+.now-playing-card.fixed-width {
+  width: 520px;
+  max-width: 520px;
+}
+
+.now-playing-container {
+  display: contents;
+}
+
+.now-playing-image,
+.now-playing-image-placeholder {
+  grid-column: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.now-playing-image-placeholder {
+  width: 64px;
+  height: 64px;
+  border-radius: 5px;
+  background-color: var(--main-surface-color);
+}
+
+.now-playing-image img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-height: 64px;
+  border-radius: 5px;
+}
+
+#now-playing-details {
+  grid-column: 2;
+  min-width: 0;
+  text-align: left;
+}
+
+.now-playing-title {
+  font-size: 18px;
+  line-height: 1.2;
+  margin: 0 0 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.now-playing-title a {
+  color: var(--main-accent-color-mauve);
+  text-decoration: none;
+}
+
+.now-playing-artist {
+  font-size: 14px;
+  color: var(--main-text-color-secondary);
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.now-playing-artist a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.now-playing-text {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.now-playing-state {
+  grid-column: 3;
+  justify-self: center;
+  padding: 6px;
+}
+
+@keyframes np-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 720px) {
+  @keyframes np-marquee-mobile {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-40%);
+    }
+  }
+
+  .now-playing-title.marquee-content a,
+  .now-playing-artist.marquee-content a {
+    animation-name: np-marquee-mobile;
+    animation-duration: 8s;
+  }
+}
+
+.now-playing-title.marquee-content a,
+.now-playing-artist.marquee-content a {
+  display: inline-block;
+  white-space: nowrap;
+  padding-right: 1rem;
+  animation: np-marquee 10s linear infinite alternate;
+}
+
+/* prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .now-playing-title.marquee-content a,
+  .now-playing-artist.marquee-content a {
+    animation: none;
+  }
+}
+
+/* sound-wave animation */
+@keyframes bounce {
+  10% {
+    transform: scaleY(0.3);
+  }
+  30% {
+    transform: scaleY(1);
+  }
+  60% {
+    transform: scaleY(0.5);
+  }
+  80% {
+    transform: scaleY(0.75);
+  }
+  100% {
+    transform: scaleY(0.6);
+  }
+}
+
+.sound-wave.playing span:nth-child(2) {
+  animation-delay: -2.2s;
+}
+
+.sound-wave.playing span:nth-child(3) {
+  animation-delay: -3.7s;
+}
+
+.sound-wave {
+  display: flex;
+  gap: 4px;
+  width: 42px;
+  height: 42px;
+}
+.sound-wave span {
+  width: 25%;
+  background: var(--main-accent-color-green);
+  transform-origin: bottom;
+}
+.sound-wave.playing span {
+  animation: bounce 2.2s ease infinite alternate;
+}
+.sound-wave.paused span {
+  transform: scaleY(0.2);
+}
+
+@media (max-width: 760px) {
+  .now-playing-card {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .now-playing-image,
+  .now-playing-image-placeholder {
+    grid-column: auto;
+    justify-self: center;
+    margin: 0 auto;
+  }
+
+  #now-playing-details {
+    grid-column: auto;
+    min-width: 0;
+  }
+
+  #now-playing-details,
+  .now-playing-title,
+  .now-playing-artist {
+    text-align: center;
+    max-width: 100% !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .now-playing-title.marquee-content a,
+  .now-playing-artist.marquee-content a {
+    animation: np-marquee 8s linear infinite alternate;
+    text-align: center;
+    display: inline-block !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+    text-overflow: clip !important;
+  }
+
+  .now-playing-text {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .now-playing-state {
+    grid-column: auto;
+    justify-self: start;
+    align-self: center;
+    padding: 6px 0 0 0;
+  }
+
+  .now-playing-card.fixed-width {
+    width: 100%;
+    max-width: 100%;
+  }
+}

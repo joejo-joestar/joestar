@@ -53,30 +53,17 @@
   background-color: var(--main-accent-color-mauve);
 }
 
-.projects-heading {
-  color: var(--main-accent-color-rosewater);
-}
-
-.projects {
+.projects-body-content {
   display: flex;
+  gap: 1rem;
   flex-direction: column;
-  width: 100%;
-}
-
-.projects > ul {
-  list-style: none;
   padding: 0;
   margin: 0;
+  font-size: 1.5rem;
 }
 
-.projects > ul > li {
-  padding: 0.5rem;
-  margin: 0.5rem 0;
-  transition: background-color 250ms ease-in-out;
-}
-
-.projects > ul > li:hover {
-  background-color: var(--main-surface-color);
+.projects-heading {
+  color: var(--main-accent-color-rosewater);
 }
 
 @media (max-width: 768px) {

@@ -30,6 +30,9 @@ const Navbar = () => {
               </NavLink>
             </div>
             <div className="nav-links">
+              <NavLink to="/projects" style={activeStyle}>
+                projects.
+              </NavLink>
               <NavLink to="/pics" style={activeStyle}>
                 photos.
               </NavLink>
@@ -103,6 +106,13 @@ const Navbar = () => {
             >
               <div className="sidebar-content">
                 <div className="nav-links-mobile">
+                  <NavLink
+                    to="/projects"
+                    style={activeStyle}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    projects.
+                  </NavLink>
                   <NavLink
                     to="/pics"
                     style={activeStyle}

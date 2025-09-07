@@ -17,4 +17,8 @@ export default defineConfig({
     },
   },
   plugins: [react()],
+  server: {
+    host: "0.0.0.0", // bind to all interfaces (IPv4 & IPv6)
+    port: 5173,
+  },
 });

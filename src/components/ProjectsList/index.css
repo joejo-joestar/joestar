@@ -1,0 +1,115 @@
+.projects-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15pt;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.repo-card-container {
+  display: block;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15pt;
+  transition: background-color 250ms ease-in-out;
+  box-sizing: border-box;
+  -webkit-column-break-inside: avoid;
+  break-inside: avoid;
+}
+.repo-card-container:hover {
+  background-color: var(--main-surface-color);
+  color: var(--main-text-color);
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.repo-card-container .repo-link,
+.repo-card-container > a:first-of-type {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.repo-card-container .repo-link:hover,
+.repo-card-container > a:first-of-type:hover {
+  text-decoration: underline;
+}
+
+.repo-card-container .repo-desc,
+.repo-card-container > p {
+  margin: 10px 0;
+  color: var(--main-text-color-secondary);
+}
+
+.repo-card-container .repo-homepage,
+.repo-card-container > a.repo-homepage,
+.repo-card-container > a:nth-of-type(2) {
+  align-self: flex-start;
+  color: var(--main-accent-color-green);
+  font-size: 18px;
+  text-decoration: none;
+}
+.repo-card-container .repo-homepage:hover,
+.repo-card-container > a.repo-homepage:hover,
+.repo-card-container > a:nth-of-type(2):hover {
+  text-decoration: underline;
+}
+
+.language {
+  display: inline-block;
+  color: var(--main-accent-color-sapphire) !important;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+@media (min-width: 768px) {
+  .projects-container {
+    display: block;
+    column-count: 2;
+    column-gap: 30px;
+    padding: 25px;
+  }
+  .repo-card-container {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+/* Force single column when requested */
+.projects-container.single-col {
+  display: flex !important;
+  flex-direction: column !important;
+  column-count: 1 !important;
+  gap: 1px;
+}
+
+@media (min-width: 768px) {
+  .projects-container.single-col {
+    display: flex !important;
+    flex-direction: column !important;
+    column-count: 1 !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .projects-container {
+    column-count: 2;
+    column-gap: 30px;
+  }
+}
+
+@media (max-width: 420px) {
+  .projects-container {
+    padding: 12px;
+    gap: 12px;
+  }
+  .repo-card-container {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+}

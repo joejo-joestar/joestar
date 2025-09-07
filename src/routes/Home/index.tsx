@@ -1,9 +1,42 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import "./index.css";
 import { useScrollToTop } from "@hooks/useScrollToTop";
+import ProjectsList from "@/components/ProjectsList";
+import { useEffect, useState } from "react";
+import { getRepos, repoBlacklist } from "@/api/repos";
 
 function Home() {
   useScrollToTop();
+  const [repos, setRepos] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let mounted = true;
+    (async () => {
+      try {
+        const data = await getRepos();
+        // filter out blacklisted ids
+        const blacklist = new Set(repoBlacklist.map((r) => r.id));
+        const filtered = (data || []).filter((r: any) => !blacklist.has(r.id));
+        const mapped = filtered.map((r: any) => ({
+          id: r.id,
+          name: r.full_name,
+          description: r.description || r.full_name || "",
+          homepage: r.homepage || undefined,
+          language: r.language || "",
+          url: r.html_url || r.url,
+        }));
+        if (mounted) setRepos(mapped);
+      } catch (err) {
+        console.error("Failed to fetch repos", err);
+      } finally {
+        if (mounted) setLoading(false);
+      }
+    })();
+    return () => {
+      mounted = false;
+    };
+  }, []);
   return (
     <>
       <section className="home">
@@ -33,172 +66,12 @@ function Home() {
           <div className="bar" />
           <br />
 
-          <span className="projects">
+          <span className="projects-body-content">
             <p className="projects-heading">
-              here are some of the{" "}
-              <a
-                href="https://github.com/joejo-joestar?tab=repositories"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                projects
-              </a>{" "}
-              i have, and am still working on
+              here are some of the <Link to="projects">projects</Link> i have,
+              and am still working on
             </p>
-            <ul>
-              <li>
-                <p>
-                  <a
-                    href="https://github.com/joejo-joestar/uni-codes"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    uni-codes
-                  </a>
-                  <br />
-                  archive of programs for all lab practicals.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <a
-                    href="https://github.com/joejo-joestar/DSA-Stuff"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    dsa-stuff
-                  </a>
-                  <br />
-                  java codes for various data structures and dsa topics.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <a
-                    href="https://github.com/joejo-joestar/OilGas-Wire"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    oilgas-wire
-                  </a>
-                  <br />a simple google apps script project to automate a
-                  newsletter and aggregates news from rss/atom feeds into a
-                  google sheet.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <a
-                    href="https://github.com/joejo-joestar/Sheets-Syntax"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    sheets-syntax
-                  </a>
-                  <br />a simple language support extension for google sheet
-                  (and other spreadsheets) formulas.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <a
-                    href="https://github.com/SreenikethanI/Mediathon2024-Logitik"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    mtc mediathon submission
-                  </a>
-                  <br />
-                  basic html css for a club competition.
-                  <br />
-                  <a
-                    href="https://sreenikethani.github.io/Mediathon2024-Logitik/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    live demo
-                  </a>
-                  <br />(
-                  <a
-                    href="https://www.linkedin.com/posts/microsoft-tech-club_microsofttechclub-photography-webdev-activity-7241003189209055232-g2q4"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    won best website award
-                  </a>
-                  )
-                </p>
-              </li>
-              <li>
-                <p>
-                  <a href="pbee.vercel.app">pBee.ai</a> <br />
-                  a project involving a react frontend.
-                  <br />
-                  <a
-                    href="https://github.com/joejo-joestar/pBee.ai-frontend"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    react frontend repository
-                  </a>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <a
-                    href="https://fontdetector.streamlit.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    font detection app
-                  </a>
-                  <br />
-                  project for foundations of data science course.
-                  <br />
-                  <a
-                    href="https://github.com/joejo-joestar/font-detection-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    frontend repository
-                  </a>{" "}
-                  and{" "}
-                  <a
-                    href="https://github.com/sreenikethani/font-detection-model"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    model repository
-                  </a>
-                </p>
-              </li>
-              <li>
-                <p>
-                  <a
-                    href="https://github.com/joejo-joestar/fakenews-detection-model"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    fake news detection model
-                  </a>
-                  <br />
-                  project for data mining course.
-                </p>
-              </li>
-              <li>
-                <p>
-                  <a
-                    href="https://github.com/joejo-joestar/NTRU-RLWE-Hybrid-Scheme"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    ntru-rlwe hybrid fhe scheme demo
-                  </a>
-                  <br />
-                  project for cryptography course.
-                </p>
-              </li>
-            </ul>
+            <ProjectsList repos={loading ? [] : repos} limit={6} />
           </span>
         </div>
       </section>

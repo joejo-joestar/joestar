@@ -71,11 +71,13 @@ const Now = () => {
         <div className="now-container">
           <div className="now-column">
             {/* Now Playing */}
-            <div>
+            <div className="listening-now">
               <h2>
                 <em>listening.</em>
               </h2>
-              <NowPlaying />
+              <div>
+                <NowPlaying />
+              </div>
             </div>
 
             {/* Now Working */}

@@ -107,6 +107,24 @@
   }
 }
 
+/* mobile-specific marquee: shorter translation because viewport is narrower */
+@media (max-width: 720px) {
+  @keyframes np-marquee-mobile {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-40%);
+    }
+  }
+
+  .now-playing-title.marquee-content a,
+  .now-playing-artist.marquee-content a {
+    animation-name: np-marquee-mobile;
+    animation-duration: 8s;
+  }
+}
+
 .now-playing-title.marquee-content a,
 .now-playing-artist.marquee-content a {
   display: inline-block;
@@ -169,11 +187,12 @@
 }
 
 /* responsive: switch to stacked column layout on smaller devices */
-@media (max-width: 720px) {
+@media (max-width: 760px) {
   .now-playing-card {
     display: flex;
+    width: 90%;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 8px;
     padding: 8px;
   }
@@ -190,36 +209,28 @@
     min-width: 0;
   }
 
-  /* center text on small screens */
   #now-playing-details,
   .now-playing-title,
   .now-playing-artist {
     text-align: center;
-  }
-
-  /* disable marquee animation on small screens */
-  .now-playing-title.marquee-content a,
-  .now-playing-artist.marquee-content a {
-    animation: none;
-    text-align: center;
-    display: block !important;
-    width: 100% !important;
-    max-width: 60% !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-    white-space: nowrap !important;
-    text-overflow: ellipsis !important;
-  }
-
-  /* parent elements must also constrain width for truncation to work */
-  #now-playing-details,
-  .now-playing-title,
-  .now-playing-artist {
-    overflow: hidden !important;
+    max-width: 100% !important;
     white-space: nowrap !important;
     text-overflow: ellipsis !important;
     min-width: 0 !important;
-    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .now-playing-title.marquee-content a,
+  .now-playing-artist.marquee-content a {
+    /* enable marquee on small screens too; keep the .now-playing-text as the clipping container */
+    animation: np-marquee 8s linear infinite alternate;
+    text-align: center;
+    display: inline-block !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+    text-overflow: clip !important;
   }
 
   /* ensure the text wrapper truncates on mobile too */

@@ -110,9 +110,9 @@ if (typeof now === "string") {
 
 - First, head over to [Spotify for Developers](https://developer.spotify.com/), create a new app, and fill in the details
 - Take Note of the `Client ID` and the `Client Secret`
-  ![App Dashboard Secrets](../assets/readme/SpotifyDevDash.png)
+  ![App Dashboard Secrets](../assets/readme/spotifyDevDash.png)
 - Next, add the local host IP (`https://127.0.0.1:5173/`) (Spotify has blacklisted `http://localhost:5173/` from being used as a redirect URI in the [latest update](https://developer.spotify.com/documentation/web-api/concepts/redirect_uri))
-  ![Redirect URIs](../assets/readme/SpotifyDevRedirects.png)
+  ![Redirect URIs](../assets/readme/spotifyDevRedirects.png)
 
 Now, we generate a "Refresh Token", which will be used to generate fresh "Access Tokens" for the actual api call.
 

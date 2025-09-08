@@ -140,8 +140,8 @@ Now, we generate a "Refresh Token", which will be used to generate fresh "Access
   http://127.0.0.1:5173/?code=<SOME_REALLY_LONG_STRING>
   ```
 
-- No, generate a `base64` string of the form `<YOUR_CLIENT_ID>:<YOUR_CLIENT_SECRET>` (`e81...a07:0b0...57c`). The base64 scting can be generated [online here](https://www.base64encode.org/)
-- Now, modify this `curl` command by adding the generated base64 string, and the `code` from the url earlier
+- Now, generate a `base64` string of the form `<YOUR_CLIENT_ID>:<YOUR_CLIENT_SECRET>` (`e81...a07:0b0...57c`). The base64 scting can be generated [online here](https://www.base64encode.org/)
+- Modify this `curl` command by adding the generated base64 string, and the `code` from the url earlier
 
   ```bash
   curl

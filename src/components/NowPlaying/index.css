@@ -6,8 +6,12 @@
   padding: 8px;
   height: auto;
   background: transparent;
+  transition: all 250ms ease-in-out;
 }
-
+.now-playing-card:hover {
+  background-color: var(--main-surface-color);
+  transition: all 250ms ease-in-out;
+}
 .now-playing-card.fixed-width {
   width: 520px;
   max-width: 520px;
@@ -38,6 +42,12 @@
   height: auto;
   max-height: 64px;
   border-radius: 5px;
+  transition: all 250ms ease-in-out;
+}
+
+.now-playing-image img:hover {
+  transform: scale(1.05);
+  transition: all 250ms ease-in-out;
 }
 
 #now-playing-details {
@@ -80,6 +90,14 @@
   text-overflow: ellipsis;
 }
 
+.now-playing-image a:hover,
+.now-playing-artist a:hover,
+.now-playing-title a:hover {
+  background-color: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+}
+
 .now-playing-state {
   grid-column: 3;
   justify-self: center;
@@ -87,28 +105,11 @@
 }
 
 @keyframes np-marquee {
-  from {
-    transform: translateX(0);
+  0% {
+    transform: translate3d(0, 0, 0);
   }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@media (max-width: 720px) {
-  @keyframes np-marquee-mobile {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-40%);
-    }
-  }
-
-  .now-playing-title.marquee-content a,
-  .now-playing-artist.marquee-content a {
-    animation-name: np-marquee-mobile;
-    animation-duration: 8s;
+  100% {
+    transform: translate3d(-100%, 0, 0);
   }
 }
 
@@ -117,7 +118,8 @@
   display: inline-block;
   white-space: nowrap;
   padding-right: 1rem;
-  animation: np-marquee 10s linear infinite alternate;
+  animation-delay: 5s !important;
+  animation: np-marquee 20s linear infinite;
 }
 
 /* prefer reduced motion */
@@ -128,7 +130,79 @@
   }
 }
 
+@media (max-width: 760px) {
+  .now-playing-card {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .now-playing-image,
+  .now-playing-image-placeholder {
+    grid-column: auto;
+    justify-self: center;
+    margin: 0 auto;
+  }
+
+  .now-playing-offline {
+    font-size: 16px;
+    margin: 0;
+    white-space: wrap !important;
+    text-align: center;
+  }
+
+  #now-playing-details,
+  .now-playing-title,
+  .now-playing-artist {
+    grid-column: auto;
+    text-align: center;
+    max-width: 100% !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .now-playing-title.marquee-content a {
+    text-align: left;
+    display: inline-block !important;
+    max-width: none !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    white-space: nowrap !important;
+    text-overflow: clip !important;
+    animation-delay: 5s !important;
+    animation: np-marquee 20s linear infinite;
+  }
+
+  .now-playing-artist.marquee-content a {
+    white-space: wrap !important;
+    animation: none;
+  }
+
+  .now-playing-text {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .now-playing-state {
+    grid-column: auto;
+    justify-self: start;
+    align-self: center;
+    padding: 6px 0 0 0;
+  }
+
+  .now-playing-card.fixed-width {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 /* sound-wave animation */
+/* reference: https://samuelkraft.com/blog/animated-music-bars */
 @keyframes bounce {
   10% {
     transform: scaleY(0.3);
@@ -171,67 +245,4 @@
 }
 .sound-wave.paused span {
   transform: scaleY(0.2);
-}
-
-@media (max-width: 760px) {
-  .now-playing-card {
-    display: flex;
-    width: 90%;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    padding: 8px;
-  }
-
-  .now-playing-image,
-  .now-playing-image-placeholder {
-    grid-column: auto;
-    justify-self: center;
-    margin: 0 auto;
-  }
-
-  #now-playing-details {
-    grid-column: auto;
-    min-width: 0;
-  }
-
-  #now-playing-details,
-  .now-playing-title,
-  .now-playing-artist {
-    text-align: center;
-    max-width: 100% !important;
-    white-space: nowrap !important;
-    text-overflow: ellipsis !important;
-    min-width: 0 !important;
-    overflow: hidden !important;
-  }
-
-  .now-playing-title.marquee-content a,
-  .now-playing-artist.marquee-content a {
-    animation: np-marquee 8s linear infinite alternate;
-    text-align: center;
-    display: inline-block !important;
-    max-width: none !important;
-    box-sizing: border-box !important;
-    overflow: visible !important;
-    white-space: nowrap !important;
-    text-overflow: clip !important;
-  }
-
-  .now-playing-text {
-    display: block !important;
-    width: 100% !important;
-  }
-
-  .now-playing-state {
-    grid-column: auto;
-    justify-self: start;
-    align-self: center;
-    padding: 6px 0 0 0;
-  }
-
-  .now-playing-card.fixed-width {
-    width: 100%;
-    max-width: 100%;
-  }
 }

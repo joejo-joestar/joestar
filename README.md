@@ -19,6 +19,7 @@ npm run dev
 - [nownownow.com](https://nownownow.com/about) for the "now" page
 - [catppuccin](https://catppuccin.com/) for the color scheme
 - [Emoji Kitchen](https://fonts.google.com/noto/specimen/Noto+Color+Emoji) for the remixed emojis
+- [CSS Loaders](https://css-loaders.com/) for the loading animations
 
 ---
 

@@ -95,7 +95,7 @@ const NowPlaying = () => {
         {/* MARK: Now Playing Details */}
         <div id="now-playing-details">
           {playerState === "OFFLINE" ? (
-            <div>getting my ears yapped off right now!</div>
+            <div className="now-playing-offline">getting my ears yapped off right now!</div>
           ) : (
             <>
               <div
@@ -103,17 +103,34 @@ const NowPlaying = () => {
               >
                 <span className="now-playing-text">
                   {playerState === "PLAY" || playerState === "PAUSE" ? (
-                    <a
-                      href={
-                        nowPlaying && typeof nowPlaying !== "string"
-                          ? nowPlaying.songUrl
-                          : ""
-                      }
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {title}
-                    </a>
+                    <>
+                      <a
+                        href={
+                          nowPlaying && typeof nowPlaying !== "string"
+                            ? nowPlaying.songUrl
+                            : ""
+                        }
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {title}
+                      </a>
+                      {title.length > 20 && (
+                        <>
+                          <a
+                            href={
+                              nowPlaying && typeof nowPlaying !== "string"
+                                ? nowPlaying.songUrl
+                                : ""
+                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {title}
+                          </a>
+                        </>
+                      )}
+                    </>
                   ) : (
                     <span>{title}</span>
                   )}

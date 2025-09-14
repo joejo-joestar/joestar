@@ -74,6 +74,10 @@ const Now = () => {
             {/* Now Playing */}
             <div className="listening-now">
               <h2>
+                <img
+                  src="https://raw.githubusercontent.com/joejo-joestar/joestar/361a8c34bc5c8bfba4217c134462fabab8978bdb/src/assets/pixlisten.png"
+                  alt="now."
+                />
                 <em>listening.</em>
               </h2>
               <div>
@@ -84,6 +88,10 @@ const Now = () => {
             {/* Now Working */}
             <div>
               <h2>
+                <img
+                  src="https://raw.githubusercontent.com/joejo-joestar/joestar/90e30b6a2562dabad67bfa19e118f86b6bd92fff/src/assets/pixprojects.png"
+                  alt="now."
+                />
                 <em>working.</em>
               </h2>
               {isLoading ? (
@@ -105,6 +113,10 @@ const Now = () => {
             {/* Now Learning */}
             <div>
               <h2>
+                <img
+                  src="https://raw.githubusercontent.com/joejo-joestar/joestar/361a8c34bc5c8bfba4217c134462fabab8978bdb/src/assets/pixlearn.png"
+                  alt="now."
+                />
                 <em>learning.</em>
               </h2>
               <div className="now-list">
@@ -123,6 +135,10 @@ const Now = () => {
             {/* Now Reading */}
             <div>
               <h2>
+                <img
+                  src="https://raw.githubusercontent.com/joejo-joestar/joestar/361a8c34bc5c8bfba4217c134462fabab8978bdb/src/assets/pixread.png"
+                  alt="now."
+                />
                 <em>reading.</em>
               </h2>
               <div className="now-list">

@@ -1,0 +1,43 @@
+.now-card {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15pt;
+  transition: background-color 250ms ease-in-out;
+  box-sizing: border-box;
+  break-inside: avoid;
+  display: flex;
+  flex-direction: column;
+}
+
+.now-card:hover {
+  background-color: var(--main-surface-color);
+}
+
+.now-card-title {
+  margin: 0;
+}
+
+.now-card-title > a {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.now-card-title > a:hover {
+  text-decoration: underline;
+}
+
+.now-card-content {
+  margin: 0;
+}
+
+.now-card .now-card-content {
+  margin: 10px 0;
+  color: var(--main-text-color-secondary);
+}
+
+@media (max-width: 420px) {
+  .now-card {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+}

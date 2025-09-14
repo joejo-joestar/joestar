@@ -1,5 +1,4 @@
 .projects-container {
-  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,7 +12,6 @@
   display: block;
   width: 100%;
   padding: 15px;
-  margin-bottom: 15pt;
   transition: background-color 250ms ease-in-out;
   box-sizing: border-box;
   -webkit-column-break-inside: avoid;
@@ -72,11 +70,9 @@
     display: block;
     column-count: 2;
     column-gap: 30px;
-    padding: 25px;
   }
   .repo-card-container {
     width: 100%;
-    margin-bottom: 30px;
   }
 }
 
@@ -85,7 +81,7 @@
   display: flex !important;
   flex-direction: column !important;
   column-count: 1 !important;
-  gap: 1px;
+  gap: 15px;
 }
 
 @media (min-width: 768px) {
@@ -99,17 +95,15 @@
 @media (min-width: 1200px) {
   .projects-container {
     column-count: 2;
-    column-gap: 30px;
+    column-gap: 15px;
   }
 }
 
 @media (max-width: 420px) {
   .projects-container {
-    padding: 12px;
     gap: 12px;
   }
   .repo-card-container {
     padding: 12px;
-    margin-bottom: 12px;
   }
 }

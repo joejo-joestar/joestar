@@ -3,6 +3,7 @@ import "./index.css";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { learningList, readingList } from "./lists";
 import NowPlaying from "@/components/NowPlaying";
+import NowCard from "@/components/NowCard";
 import { useEffect, useState } from "react";
 import { getRepos, repoBlacklist } from "@/api/github";
 import ProjectsList from "@/components/ProjectsList";
@@ -79,7 +80,7 @@ const Now = () => {
                 <NowPlaying />
               </div>
             </div>
-
+            <div /* Spacer */ className="divider"></div>
             {/* Now Working */}
             <div>
               <h2>
@@ -97,6 +98,7 @@ const Now = () => {
                 />
               )}
             </div>
+            <div /* Spacer */ className="divider"></div>
           </div>
 
           <div className="now-column">
@@ -105,42 +107,37 @@ const Now = () => {
               <h2>
                 <em>learning.</em>
               </h2>
-              <ul>
+              <div className="now-list">
                 {learningList.map((item, index) => (
-                  <li key={index} className="item">
-                    <a
-                      href={item.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {item.title.toLocaleLowerCase()}
-                    </a>
-                    : {item.description.toLocaleLowerCase()}
-                  </li>
+                  <div key={index} className="now-item">
+                    <NowCard
+                      title={item.title}
+                      description={item.description}
+                      link={item.link}
+                    />
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
-
+            <div /* Spacer */ className="divider"></div>
             {/* Now Reading */}
             <div>
               <h2>
                 <em>reading.</em>
               </h2>
-              <ul>
+              <div className="now-list">
                 {readingList.map((book, index) => (
-                  <li key={index} className="item">
-                    <a
-                      href={book.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {book.title}
-                    </a>{" "}
-                    by {book.author}
-                  </li>
+                  <div key={index} className="now-item">
+                    <NowCard
+                      title={book.title}
+                      author={book.author}
+                      link={book.link}
+                    />
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
+            <div /* Spacer */ className="divider"></div>
           </div>
         </div>
       </div>

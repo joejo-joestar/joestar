@@ -11,30 +11,6 @@ export const readingList = [
   },
 ];
 
-export const workingList = [
-  {
-    title: "Portfolio Website",
-    description: "Maintiaing this website!",
-    link: "https://github.com/joejo-joestar/joestar",
-  },
-  {
-    title: "uni-codes",
-    description: "Collection of all my lab codes from university.",
-    link: "https://github.com/joejo-joestar/uni-codes",
-  },
-  {
-    title: "Sheets-Syntax",
-    description: "A simple language support extension for google sheets.",
-    link: "https://github.com/joejo-joestar/Sheets-Syntax",
-  },
-  {
-    title: "OilGas-Wire",
-    description:
-      "A simple apps script project for automating a newsletter and aggregating rss/atom feeds.",
-    link: "https://github.com/joejo-joestar/OilGas-Wire",
-  },
-];
-
 export const learningList = [
   {
     title: "Power BI",

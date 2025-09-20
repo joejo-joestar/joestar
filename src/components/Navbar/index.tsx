@@ -12,7 +12,7 @@ function activeStyle({ isActive }: { isActive: boolean }) {
 }
 
 const Navbar = () => {
-  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useMediaQuery("(max-width: 950px)");
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -32,6 +32,12 @@ const Navbar = () => {
             <div className="nav-links">
               <NavLink to="/projects" style={activeStyle}>
                 projects.
+              </NavLink>
+              <NavLink
+                to="https://joestar-tools.vercel.app/"
+                style={activeStyle}
+              >
+                tools.
               </NavLink>
               <NavLink to="/pics" style={activeStyle}>
                 photos.
@@ -112,6 +118,12 @@ const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                   >
                     projects.
+                  </NavLink>
+                  <NavLink
+                    to="https://joestar-tools.vercel.app/"
+                    style={activeStyle}
+                  >
+                    tools.
                   </NavLink>
                   <NavLink
                     to="/pics"

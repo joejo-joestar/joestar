@@ -2,6 +2,7 @@ import "./index.css";
 import { NavLink, Outlet } from "react-router";
 import useMediaQuery from "@hooks/useMediaQuery";
 import { useState } from "react";
+import { NavItems } from "./NavItems";
 
 function activeStyle({ isActive }: { isActive: boolean }) {
   return {
@@ -30,24 +31,11 @@ const Navbar = () => {
               </NavLink>
             </div>
             <div className="nav-links">
-              <NavLink to="/projects" style={activeStyle}>
-                projects.
-              </NavLink>
-              <NavLink
-                to="https://joestar-tools.vercel.app/"
-                style={activeStyle}
-              >
-                tools.
-              </NavLink>
-              <NavLink to="/pics" style={activeStyle}>
-                photos.
-              </NavLink>
-              <NavLink to="/nownownow" style={activeStyle}>
-                now.
-              </NavLink>
-              <NavLink to="/contact" style={activeStyle}>
-                contact.
-              </NavLink>
+              {Object.values(NavItems).map((item) => (
+                <NavLink key={item.label} to={item.to} style={activeStyle}>
+                  {item.label}
+                </NavLink>
+              ))}
             </div>
           </>
         )}
@@ -112,40 +100,16 @@ const Navbar = () => {
             >
               <div className="sidebar-content">
                 <div className="nav-links-mobile">
-                  <NavLink
-                    to="/projects"
-                    style={activeStyle}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    projects.
-                  </NavLink>
-                  <NavLink
-                    to="https://joestar-tools.vercel.app/"
-                    style={activeStyle}
-                  >
-                    tools.
-                  </NavLink>
-                  <NavLink
-                    to="/pics"
-                    style={activeStyle}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    photos.
-                  </NavLink>
-                  <NavLink
-                    to="/nownownow"
-                    style={activeStyle}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    now.
-                  </NavLink>
-                  <NavLink
-                    to="/contact"
-                    style={activeStyle}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    contact.
-                  </NavLink>
+                  {Object.values(NavItems).map((item) => (
+                    <NavLink
+                      key={item.label}
+                      to={item.to}
+                      style={activeStyle}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </NavLink>
+                  ))}
                 </div>
               </div>
             </aside>

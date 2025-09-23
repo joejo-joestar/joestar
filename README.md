@@ -18,7 +18,7 @@ npm run dev
 - [Oneko](https://github.com/adryd325/oneko.js/) for cat follow mouse real!
 - [nownownow.com](https://nownownow.com/about) for the "now" page
 - [catppuccin](https://catppuccin.com/) for the color scheme
-- [Emoji Kitchen](https://fonts.google.com/noto/specimen/Noto+Color+Emoji) for the remixed emojis
+- [Emoji Kitchen](https://fonts.google.com/noto/specimen/Noto+Color+Emoji) for the remixed emojis (you can try out the combinations on this [really cool site](https://emojikitchen.dev/))
 - [CSS Loaders](https://css-loaders.com/) for the loading animations
 
 ---

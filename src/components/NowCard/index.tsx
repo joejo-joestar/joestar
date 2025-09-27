@@ -7,7 +7,7 @@ interface NowItemProps {
   link: string;
 }
 
-export const NowCard: React.FC<NowItemProps> = ({
+const NowCard: React.FC<NowItemProps> = ({
   title,
   description,
   author,

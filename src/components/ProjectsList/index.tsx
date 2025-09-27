@@ -15,11 +15,7 @@ interface ProjectsProps {
   singleCol?: boolean;
 }
 
-export const Projects: React.FC<ProjectsProps> = ({
-  repos,
-  limit,
-  singleCol,
-}) => {
+const Projects: React.FC<ProjectsProps> = ({ repos, limit, singleCol }) => {
   const displayedRepos =
     typeof limit === "number" && limit > 0 ? repos.slice(0, limit) : repos;
 

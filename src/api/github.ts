@@ -35,4 +35,5 @@ export const repoBlacklist = [
   { id: 732342842 },
   { id: 1047632816 },
   { id: 689259000 },
+  { id: 1063993915 },
 ];

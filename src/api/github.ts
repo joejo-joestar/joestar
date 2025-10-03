@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Use the hosted middleware to proxy GitHub requests and handle auth/blacklist/cache server-side
-const MIDDLEWARE_ROOT = "https://joestar-middelware.vercel.app";
+const MIDDLEWARE_ROOT = "https://joestar-middleware.vercel.app";
 
 export const getRepos = async (noCache = false) => {
   const url = `${MIDDLEWARE_ROOT}/github/repos${noCache ? "?no_cache=1" : ""}`;

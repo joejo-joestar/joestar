@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const MIDDLEWARE_ROOT = "https://joestar-middelware.vercel.app";
+const MIDDLEWARE_ROOT = "https://joestar-middleware.vercel.app";
 
 export const getCollections = async (noCache = false) => {
   const url = `${MIDDLEWARE_ROOT}/unsplash/collections${noCache ? "?no_cache=1" : ""}`;
@@ -18,12 +18,21 @@ export const getCollections = async (noCache = false) => {
     return [];
   } catch (err) {
     // eslint-disable-next-line no-console
-    console.error("getCollections middleware error:", err && (err as any).message ? (err as any).message : err);
+    console.error(
+      "getCollections middleware error:",
+      err && (err as any).message ? (err as any).message : err
+    );
     return [];
   }
 };
 
-export const getPhotos = async ({ collectionID, per_page }: { collectionID: string; per_page?: number }) => {
+export const getPhotos = async ({
+  collectionID,
+  per_page,
+}: {
+  collectionID: string;
+  per_page?: number;
+}) => {
   const qs = per_page ? `?per_page=${per_page}` : "";
   const url = `${MIDDLEWARE_ROOT}/unsplash/collections/${collectionID}/photos${qs}`;
   try {
@@ -39,7 +48,10 @@ export const getPhotos = async ({ collectionID, per_page }: { collectionID: stri
     return [];
   } catch (err) {
     // eslint-disable-next-line no-console
-    console.error("getPhotos middleware error:", err && (err as any).message ? (err as any).message : err);
+    console.error(
+      "getPhotos middleware error:",
+      err && (err as any).message ? (err as any).message : err
+    );
     return [];
   }
 };

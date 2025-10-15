@@ -30,6 +30,7 @@ const Password = () => {
 
   return (
     <section className="password">
+      <title>shhhhh!!</title>
       <label htmlFor="pass">pasword?</label>
       <input
         type="text"

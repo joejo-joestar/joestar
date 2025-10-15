@@ -83,7 +83,7 @@ joestar
 
 ---
 
-## 🔌 
+## 🔌 Related Repos
 
 This website uses resources from two other repos
 

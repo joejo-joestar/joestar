@@ -4,6 +4,7 @@ import "./index.css";
 const MissingPage = () => {
   return (
     <section className="missing-page">
+      <title>missingno. | joestar</title>
       <img
         src="https://raw.githubusercontent.com/joejo-joestar/joestar/8088435f433a56d8bc6dbf45c871dea1e615d75a/src/assets/pix404.png"
         className="missingno"

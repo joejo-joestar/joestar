@@ -7,6 +7,7 @@ const Contact = () => {
   useScrollToTop();
   return (
     <section className="contact">
+      <title>contact. | joestar</title>
       <h1>
         <img
           src="https://raw.githubusercontent.com/joejo-joestar/joestar/8ad250ff86a6254c58bb2072f0dc163b48b1d5b5/src/assets/pixcontact.png"

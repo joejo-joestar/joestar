@@ -35,11 +35,11 @@ const NowPlaying = () => {
     };
 
     // The spotify API does not support web sockets, so in order to keep updating
-    // the currently playing song and time elapsed - we call the API every second.
+    // the currently playing song and time elapsed - we call the API every 30 seconds.
     fetchNowPlaying();
     const interval = setInterval(() => {
       fetchNowPlaying();
-    }, 40000); // poll every 40 seconds
+    }, 30000); // poll every 30 seconds
 
     // cleanup interval on unmount
     return () => clearInterval(interval);
@@ -95,7 +95,9 @@ const NowPlaying = () => {
         {/* MARK: Now Playing Details */}
         <div id="now-playing-details">
           {playerState === "OFFLINE" ? (
-            <div className="now-playing-offline">getting my ears yapped off right now!</div>
+            <div className="now-playing-offline">
+              getting my ears yapped off right now!
+            </div>
           ) : (
             <>
               <div

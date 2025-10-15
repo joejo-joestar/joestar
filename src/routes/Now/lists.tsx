@@ -13,19 +13,14 @@ export const readingList = [
 
 export const learningList = [
   {
-    title: "Power BI",
-    description: "Learning Power BI for data visualization.",
-    link: "https://www.wikiwand.com/en/Power_BI",
-  },
-  {
-    title: "Google Looker Studio",
-    description: "Learning Looker Studio for advanced data visualization.",
-    link: "https://www.wikiwand.com/en/Looker_Studio",
-  },
-  {
     title: "Node.js",
     description: "Learning Node.js for backend development.",
     link: "https://www.wikiwand.com/en/Node.js",
+  },
+  {
+    title: "Docker",
+    description: "Learning Docker for containerization.",
+    link: "https://www.wikiwand.com/en/articles/Docker_(software)",
   },
   {
     title: "Google Apps Script",

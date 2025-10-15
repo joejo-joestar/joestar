@@ -20,6 +20,7 @@ npm run dev
 - [catppuccin](https://catppuccin.com/) for the color scheme
 - [Emoji Kitchen](https://fonts.google.com/noto/specimen/Noto+Color+Emoji) for the remixed emojis (you can try out the combinations on this [really cool site](https://emojikitchen.dev/))
 - [CSS Loaders](https://css-loaders.com/) for the loading animations
+- [is-a.dev](https://is-a.dev/) for the free subdomain
 
 ---
 
@@ -79,6 +80,15 @@ joestar
     └── shared/           # Shared utilities / data
         └── socialsList.ts  # Social links used across the site
 ```
+
+---
+
+## 🔌 
+
+This website uses resources from two other repos
+
+- [joejo-joestar/joestar-middleware](https://github.com/joejo-joestar/joestar-middleware) for the api proxies
+- [joejo-joestar/joestar-tools](https://github.com/joejo-joestar/joestar-tools) for the client side tools page
 
 ---
 

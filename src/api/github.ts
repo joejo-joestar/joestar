@@ -1,22 +1,33 @@
 import axios from "axios";
 
-const githubToken = import.meta.env.VITE_GITHUB_ACCESS_TOKEN;
+// Use the hosted middleware to proxy GitHub requests and handle auth/blacklist/cache server-side
+const MIDDLEWARE_ROOT = "https://joestar-middleware.vercel.app";
 
-const GITHUB_ROOT = "https://api.github.com";
-const USERNAME = "joejo-joestar";
-
-export const getRepos = async () => {
-  const { data } = await axios.get(
-    `${GITHUB_ROOT}/users/${USERNAME}/repos?sort=pushed&type=all`,
-    {
+export const getRepos = async (noCache = false) => {
+  const url = `${MIDDLEWARE_ROOT}/github/repos${noCache ? "?no_cache=1" : ""}`;
+  try {
+    const { data } = await axios.get(url, {
       headers: {
-        Authorization: `token ${githubToken}`,
-        Accept: "application / vnd.github + json",
-        "X-GitHub-Api-Version": "2022-11-28",
+        Accept: "application/json",
       },
-    }
-  );
-  return data;
+      timeout: 5000,
+    });
+
+    // middleware returns { meta, repos }
+    if (data && Array.isArray(data.repos)) return data.repos;
+    // fallback: some responses might return the array directly
+    if (Array.isArray(data)) return data;
+    return [];
+  } catch (err) {
+    // swallow and return empty list on network or parse errors
+    // caller/UI should handle empty array gracefully
+    // eslint-disable-next-line no-console
+    console.error(
+      "getRepos middleware error:",
+      err && (err as any).message ? (err as any).message : err
+    );
+    return [];
+  }
 };
 
 export const repoBlacklist = [
@@ -24,4 +35,5 @@ export const repoBlacklist = [
   { id: 732342842 },
   { id: 1047632816 },
   { id: 689259000 },
+  { id: 1063993915 },
 ];

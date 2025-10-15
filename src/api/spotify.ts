@@ -1,12 +1,6 @@
 import axios from "axios";
 
-const NOW_PLAYING_ENDPOINT =
-  "https://api.spotify.com/v1/me/player/currently-playing";
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
-
-const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
-const refreshToken = import.meta.env.VITE_SPOTIFY_REFRESH_TOKEN;
 
 // https://accounts.spotify.com/en/authorize?response_type=code&client_id=<App_Client_ID>&scope=user-read-currently-playing&redirect_uri=http%3A%2F%2F<LOCALHOST_IP>%3A<PORT_NUMBER>%2F&state=mystate
 
@@ -43,54 +37,32 @@ export const getAccessToken = async (
 
 //Uses the access token to fetch the currently playing song
 export const getNowPlaying = async () => {
+  // Use the server-side middleware to fetch and simplify now-playing info
+  const MIDDLEWARE_ROOT = "https://joestar-middleware.vercel.app";
+  const url = `${MIDDLEWARE_ROOT}/spotify/now-playing`;
+
   try {
-    //Generating an access token
-    const { access_token } = await getAccessToken(
-      clientId,
-      clientSecret,
-      refreshToken
-    );
-    // Fetch the currently playing track using axios
-    const response = await axios.get(NOW_PLAYING_ENDPOINT, {
-      headers: { Authorization: `Bearer ${access_token}` },
-      validateStatus: () => true, // we'll handle status codes manually
+    const { data } = await axios.get(url, {
+      headers: { Accept: "application/json" },
+      timeout: 5000,
+      validateStatus: () => true,
     });
 
-    // Handle status codes
-    if (response.status > 400) {
-      throw new Error("Unable to Fetch Song");
-    } else if (response.status === 204) {
-      throw new Error("Currently Not Playing");
+    // middleware returns { meta: { authenticated }, nowPlaying: {...} }
+    if (data && Object.prototype.hasOwnProperty.call(data, "nowPlaying")) {
+      return data.nowPlaying;
     }
 
-    // Extracting the required data from the response into separate variables
-    const song = response.data;
-    const albumImageUrl = song.item.album.images[0].url;
-    const artist = song.item.artists
-      .map((artist: { name: string }) => artist.name)
-      .join(", ");
-    const isPlaying = song.is_playing;
-    const songUrl = song.item.external_urls.spotify;
-    const title = song.item.name;
-    const timePlayed = song.progress_ms;
-    const timeTotal = song.item.duration_ms;
-    const artistUrl = song.item.album.artists[0].external_urls.spotify;
-    const albumUrl = song.item.album.external_urls.spotify;
+    // fallback: if middleware returned the object directly
+    if (data && typeof data === "object") return data as any;
 
-    //Returning the song details
-    return {
-      albumImageUrl,
-      artist,
-      isPlaying,
-      songUrl,
-      albumUrl,
-      title,
-      timePlayed,
-      timeTotal,
-      artistUrl,
-    };
+    return null;
   } catch (error: any) {
-    console.error("Error fetching currently playing song: ", error);
-    return error.message.toString();
+    // eslint-disable-next-line no-console
+    console.error(
+      "getNowPlaying middleware error:",
+      error && error.message ? error.message : error
+    );
+    return null;
   }
 };

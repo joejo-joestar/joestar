@@ -2,11 +2,7 @@ import { getNowPlaying } from "@/api/spotify";
 import { useEffect, useState } from "react";
 import "./index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCompactDisc,
-  faExclamationCircle,
-  faMoon,
-} from "@fortawesome/free-solid-svg-icons";
+import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 
 // shape of the data returned by the API when a song is playing
 interface NowPlayingData {
@@ -16,7 +12,6 @@ interface NowPlayingData {
   albumUrl?: string;
   albumImageUrl?: string;
   songUrl?: string;
-  isPlaying?: boolean;
   timePlayed?: number;
   timeTotal?: number;
 }
@@ -35,11 +30,11 @@ const NowPlaying = () => {
     };
 
     // The spotify API does not support web sockets, so in order to keep updating
-    // the currently playing song and time elapsed - we call the API every 30 seconds.
+    // the currently playing song and time elapsed - we call the API every 10 seconds.
     fetchNowPlaying();
     const interval = setInterval(() => {
       fetchNowPlaying();
-    }, 30000); // poll every 30 seconds
+    }, 10000); // poll every 10 seconds
 
     // cleanup interval on unmount
     return () => clearInterval(interval);
@@ -56,8 +51,7 @@ const NowPlaying = () => {
     typeof nowPlaying !== "string" &&
     nowPlaying.title
   ) {
-    //Used while displaying a soundbar/pause icon on the widget
-    playerState = nowPlaying.isPlaying ? "PLAY" : "PAUSE";
+    playerState = "ONLINE";
 
     albumImageUrl = nowPlaying.albumImageUrl ?? albumImageUrl;
     title = nowPlaying.title ?? "";
@@ -73,7 +67,7 @@ const NowPlaying = () => {
     <div className="now-playing-card">
       <div className="now-playing-container">
         {/* MARK: Now PLaying Album Art */}
-        {playerState === "PLAY" || playerState === "PAUSE" ? (
+        {playerState === "ONLINE" ? (
           <div className="now-playing-image">
             <a
               href={
@@ -96,7 +90,7 @@ const NowPlaying = () => {
         <div id="now-playing-details">
           {playerState === "OFFLINE" ? (
             <div className="now-playing-offline">
-              getting my ears yapped off right now!
+              getting my ears yapped off right now!!
             </div>
           ) : (
             <>
@@ -104,7 +98,7 @@ const NowPlaying = () => {
                 className={`now-playing-title ${title.length > 20 ? "marquee-content" : ""}`}
               >
                 <span className="now-playing-text">
-                  {playerState === "PLAY" || playerState === "PAUSE" ? (
+                  {playerState === "ONLINE" ? (
                     <>
                       <a
                         href={
@@ -143,7 +137,7 @@ const NowPlaying = () => {
                 className={`now-playing-artist ${artist.length > 20 ? "marquee-content" : ""}`}
               >
                 <span className="now-playing-text">
-                  {playerState === "PLAY" || playerState === "PAUSE" ? (
+                  {playerState === "ONLINE" ? (
                     <a
                       href={
                         nowPlaying && typeof nowPlaying !== "string"
@@ -160,35 +154,9 @@ const NowPlaying = () => {
                   )}
                 </span>
               </div>
-              {/* timestamps removed */}
             </>
           )}
-          {/* Song Title displayed based on playerState */}
         </div>
-      </div>
-      {/* Icon displayed based on playerState */}
-      <div className="now-playing-state">
-        {playerState === "PLAY" || playerState === "PAUSE" ? (
-          <div
-            /* Sound bar animation */ className={`sound-wave ${playerState === "PLAY" ? "playing" : "paused"}`}
-          >
-            <span />
-            <span />
-            <span />
-          </div>
-        ) : playerState === "OFFLINE" ? (
-          <FontAwesomeIcon
-            icon={faMoon}
-            size="2x"
-            color="var(--main-accent-color-green)"
-          />
-        ) : (
-          <FontAwesomeIcon
-            icon={faExclamationCircle}
-            size="2x"
-            color="var(--main-accent-color-green)"
-          />
-        )}
       </div>
     </div>
   );

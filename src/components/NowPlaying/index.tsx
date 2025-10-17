@@ -132,7 +132,6 @@ const NowPlaying = () => {
                   )}
                 </span>
               </div>
-              {/* Artist displayed based on playerState */}
               <div
                 className={`now-playing-artist ${artist.length > 20 ? "marquee-content" : ""}`}
               >

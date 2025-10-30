@@ -89,7 +89,7 @@ const NowPlaying = () => {
           </div>
         ) : (
           <div className="now-playing-image-placeholder">
-            <FontAwesomeIcon icon={faCompactDisc} size="2x" spin />
+            <FontAwesomeIcon icon={faCompactDisc as any} size="2x" spin />
           </div>
         )}
         {/* MARK: Now Playing Details */}
@@ -178,13 +178,13 @@ const NowPlaying = () => {
           </div>
         ) : playerState === "OFFLINE" ? (
           <FontAwesomeIcon
-            icon={faMoon}
+            icon={faMoon as any}
             size="2x"
             color="var(--main-accent-color-green)"
           />
         ) : (
           <FontAwesomeIcon
-            icon={faExclamationCircle}
+            icon={faExclamationCircle as any}
             size="2x"
             color="var(--main-accent-color-green)"
           />

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const MIDDLEWARE_ROOT = "https://joestar-middleware.vercel.app";
+const MIDDLEWARE_ROOT = "https://api.joestar.is-a.dev";
 
 export const getCollections = async (noCache = false) => {
   const url = `${MIDDLEWARE_ROOT}/unsplash/collections${noCache ? "?no_cache=1" : ""}`;

@@ -76,3 +76,32 @@
     margin-bottom: 50px;
   }
 }
+
+/* loader */
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.loader {
+  width: 120px;
+  height: 20px;
+  mask: linear-gradient(90deg, var(--main-accent-color-green) 70%, #0000 0)
+    0/20%;
+  -webkit-mask: linear-gradient(
+      90deg,
+      var(--main-accent-color-green) 70%,
+      #0000 0
+    )
+    0/20%;
+  background: linear-gradient(var(--main-accent-color-green) 0 0) 0/0% no-repeat
+    var(--main-overlay-color);
+  animation: l4 2s infinite steps(6);
+}
+@keyframes l4 {
+  100% {
+    background-size: 120%;
+  }
+}

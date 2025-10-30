@@ -8,7 +8,7 @@ import { getRepos, repoBlacklist } from "@/api/github";
 function Home() {
   useScrollToTop();
   const [repos, setRepos] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [isloading, setLoading] = useState(true);
 
   useEffect(() => {
     let mounted = true;
@@ -71,7 +71,13 @@ function Home() {
               here are some of the <Link to="projects">projects</Link> i have,
               and am still working on
             </p>
-            <ProjectsList repos={loading ? [] : repos} limit={6} />
+            {isloading ? (
+              <div className="loader-container">
+                <div className="loader"></div>
+              </div>
+            ) : (
+              <ProjectsList repos={isloading ? [] : repos} limit={6} />
+            )}
           </span>
         </div>
       </section>

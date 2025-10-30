@@ -55,26 +55,21 @@
 
 .loader {
   width: 120px;
-  aspect-ratio: 1;
-  --g: conic-gradient(
-    from -90deg at 20px 20px,
-    var(--main-accent-color-green) 90deg,
-    #0000 0
-  );
-  background:
-    var(--g),
-    var(--g) 20px 20px,
-    var(--g) 40px 40px;
-  background-size: 50% 50%;
-  animation: l15 1s infinite;
+  height: 20px;
+  mask: linear-gradient(90deg, var(--main-accent-color-green) 70%, #0000 0)
+    0/20%;
+  -webkit-mask: linear-gradient(
+      90deg,
+      var(--main-accent-color-green) 70%,
+      #0000 0
+    )
+    0/20%;
+  background: linear-gradient(var(--main-accent-color-green) 0 0) 0/0% no-repeat
+    var(--main-overlay-color);
+  animation: l4 2s infinite steps(6);
 }
-
-@keyframes l15 {
-  90%,
+@keyframes l4 {
   100% {
-    background-position:
-      -60px 60px,
-      -40px 80px,
-      -20px 100px;
+    background-size: 120%;
   }
 }

@@ -66,14 +66,12 @@ const Projects = () => {
               </p>
             </span>
           </div>
-          {/* The loader is now controlled by the 'isLoading' state */}
           {isLoading ? (
             <div className="loader-container">
               <div className="loader"></div>
             </div>
           ) : (
             <div className="repos-grid">
-              {" "}
               <ProjectsList repos={isLoading ? [] : repos} />
             </div>
           )}

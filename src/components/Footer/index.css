@@ -44,7 +44,7 @@ footer p {
   fill: var(--main-text-color);
 }
 
-@media screen and (max-width: 600px) {
+@media (max-width: 600px) {
   footer {
     width: auto;
     gap: 10px;

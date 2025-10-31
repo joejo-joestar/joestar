@@ -60,6 +60,16 @@
   margin: 1rem 0;
 }
 
+.readme-body-content strong {
+  color: var(--main-accent-color-red);
+  font-weight: 600;
+}
+
+.readme-body-content em {
+  font-style: italic;
+  color: var(--main-accent-color-sapphire);
+}
+
 .readme-body-content img {
   max-width: 100%;
   height: auto;
@@ -91,7 +101,7 @@
 }
 
 .readme-body-content a {
-  color: var(--main-accent-color-sapphire);
+  color: var(--main-accent-color-mauve);
   text-decoration: none;
 }
 

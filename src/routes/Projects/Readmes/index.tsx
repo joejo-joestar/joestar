@@ -32,7 +32,7 @@ function Readmes() {
   useEffect(() => {
     let mounted = true;
     (async () => {
-      if (!repo) {
+      if (!repo || !owner) {
         if (mounted) {
           setReadme("No README found.");
           setIsLoading(false);
@@ -41,7 +41,7 @@ function Readmes() {
       }
 
       try {
-        const data = await getReadme(repo);
+        const data = await getReadme(owner, repo);
         const fixed = fixReadmePaths(data || "", owner || "", repo);
         if (mounted) setReadme(fixed || "No README found.");
       } catch (err) {

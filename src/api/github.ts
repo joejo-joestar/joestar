@@ -31,8 +31,8 @@ export const getRepos = async (noCache = false) => {
   }
 };
 
-export const getReadme = async (repoName: string) => {
-  const url = `${MIDDLEWARE_ROOT}/github/${repoName}/readme`;
+export const getReadme = async (ownerName: string, repoName: string) => {
+  const url = `${MIDDLEWARE_ROOT}/github/${ownerName}/${repoName}/readme`;
   try {
     const { data } = await axios.get(url, {
       headers: {

@@ -15,6 +15,7 @@ import Projects from "@routes/Projects";
 import MissingPage from "@routes/Missingno";
 // Secrets :3
 import Password from "@routes/Password";
+import Readmes from "./routes/Projects/Readmes";
 
 const hehe = "\x70\x61\x73\x6f\x77\x72\x64";
 
@@ -34,10 +35,11 @@ createRoot(document.getElementById("root")!).render(
           }
         >
           <Route path="/" element={<Home />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="pics" element={<Photos />} />
-          <Route path="nownownow" element={<Now />} />
-          <Route path="contact" element={<Contact />} />
+          <Route path="projects/" element={<Projects />} />
+          <Route path="projects/readme/:repo" element={<Readmes />} />
+          <Route path="pics/" element={<Photos />} />
+          <Route path="nownownow/" element={<Now />} />
+          <Route path="contact/" element={<Contact />} />
         </Route>
         <Route path={hehe} element={<Password />} />
         <Route path="*" element={<MissingPage />} />

@@ -146,21 +146,22 @@ const Photos = () => {
               </p>
             </span>
           </div>
-          <CategoryMenu
-            categories={categories}
-            links={links}
-            activeCategory={activeCategory}
-            onSelectCategory={handleSelectCategory}
-          />
-          {/* The loader is now controlled by the 'isLoading' state */}
           {isLoading ? (
             <div className="loader-container">
               <div className="loader"></div>
             </div>
           ) : (
-            <div className="photos-grid">
-              <MainGallery images={filteredImages} />
-            </div>
+            <>
+              <CategoryMenu
+                categories={categories}
+                links={links}
+                activeCategory={activeCategory}
+                onSelectCategory={handleSelectCategory}
+              />
+              <div className="photos-grid">
+                <MainGallery images={filteredImages} />
+              </div>
+            </>
           )}
         </div>
       </section>

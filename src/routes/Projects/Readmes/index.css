@@ -13,13 +13,7 @@
 }
 
 .readme h1 {
-  display: flex;
-  align-items: center;
   gap: 1rem;
-  font-weight: 600;
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  color: var(--main-accent-color-green);
 }
 
 .readme h1 img {
@@ -32,18 +26,84 @@
   flex-direction: column;
   padding: 0;
   margin: 0;
-  gap: 1rem;
-  font-size: 1.5rem;
   width: 100%;
+}
+
+.readme-body-content h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--main-accent-color-mauve);
+}
+
+.readme-body-content h2,
+.readme-body-content h2 a {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--main-accent-color-peach);
+}
+
+.readme-body-content h3,
+.readme-body-content h3 a {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  color: var(--main-accent-color-green);
+}
+
+.readme-body-content hr {
+  border-color: var(--main-accent-color-green);
+  margin: 1rem 0;
+}
+
+.readme-body-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+}
+
+.readme-body-content .contains-task-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.readme-body-content code {
+  color: var(--main-accent-color-green);
+  background-color: var(--main-surface-color);
+  padding: 0.2rem 0.4rem;
+}
+
+.readme-body-content pre {
+  background-color: var(--main-surface-color);
+  padding: 1rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.readme-body-content pre code {
+  background-color: transparent;
+  padding: 0;
+  color: var(--main-text-color);
+}
+
+.readme-body-content a {
+  color: var(--main-accent-color-sapphire);
+  text-decoration: none;
+}
+
+.readme-body-content a:hover {
+  text-decoration: underline;
+  background-color: transparent;
+  box-shadow: none;
 }
 
 @media (max-width: 768px) {
   .readme {
     margin-top: 15%;
-  }
-
-  .readme-body-content {
-    font-size: 1.3rem;
   }
 }
 

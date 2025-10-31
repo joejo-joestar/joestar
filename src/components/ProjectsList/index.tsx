@@ -35,7 +35,9 @@ const Projects: React.FC<ProjectsProps> = ({ repos, limit, singleCol }) => {
               {repo.owner}/{repo.name}
             </a>
             <p className="repo-desc">{repo.description}</p>
-            <Link to={`/projects/readme/${repo.name}`}>readme!</Link>
+            <Link to={`/projects/${repo.owner}/${repo.name}/readme`}>
+              readme!
+            </Link>
             {repo.homepage && (
               <a
                 className="repo-homepage"

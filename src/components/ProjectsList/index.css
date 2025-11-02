@@ -47,7 +47,7 @@
 .repo-card-container a.repo-readme {
   align-self: flex-start;
   color: var(--main-accent-color-blue);
-  font-size: 18px;
+  font-size: 1rem;
   text-decoration: none;
 }
 
@@ -62,7 +62,7 @@
 .repo-card-container > a:nth-of-type(2) {
   align-self: flex-start;
   color: var(--main-accent-color-green);
-  font-size: 18px;
+  font-size: 1rem;
   text-decoration: none;
 }
 .repo-card-container .repo-homepage:hover,
@@ -76,19 +76,8 @@
 .language {
   display: inline-block;
   color: var(--main-accent-color-sapphire) !important;
-  font-size: 14px;
+  font-size: 0.75rem;
   margin-top: 10px;
-}
-
-@media (min-width: 768px) {
-  .projects-container {
-    display: block;
-    column-count: 2;
-    column-gap: 30px;
-  }
-  .repo-card-container {
-    width: 100%;
-  }
 }
 
 /* Force single column when requested */
@@ -100,6 +89,15 @@
 }
 
 @media (min-width: 768px) {
+  .projects-container {
+    display: block;
+    column-count: 2;
+    column-gap: 30px;
+  }
+  .repo-card-container {
+    width: 100%;
+  }
+
   .projects-container.single-col {
     display: flex !important;
     flex-direction: column !important;

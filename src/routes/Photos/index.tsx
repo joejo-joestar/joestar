@@ -148,7 +148,7 @@ const Photos = () => {
           </div>
           {isLoading ? (
             <div className="loader-container">
-              <div className="loader"></div>
+              <div className="loader" />
             </div>
           ) : (
             <>

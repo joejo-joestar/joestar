@@ -1,6 +1,6 @@
 // import "./index.css";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { Link, useParams } from "react-router";
 
 import Markdown from "react-markdown";
 
@@ -20,6 +20,10 @@ import rehypeHighlight from "rehype-highlight";
 import { getReadme } from "@/api/github";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { fixReadmePaths } from "@/utils/readmePaths";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import "./index.css";
 
@@ -59,9 +63,23 @@ function Readmes() {
     <section className="readme">
       <title>projects/readme. | joestar</title>
       <div className="readme-body-content">
+        <div className="readme-nav">
+          <Link className="go-back" to="/projects/">
+            <FontAwesomeIcon className="back-arrow" icon={faArrowLeft as any} />{" "}
+            Go Back!
+          </Link>
+          <a
+            className="go-to-repo"
+            href={`http://github.com/${owner}/${repo}`}
+            target="_blank"
+          >
+            <FontAwesomeIcon className="repo-link" icon={faGithub as any} /> Go
+            to the Repo!
+          </a>
+        </div>
         {isLoading ? (
           <div className="loader-container">
-            <div className="loader"></div>
+            <div className="loader" />
           </div>
         ) : (
           <Markdown

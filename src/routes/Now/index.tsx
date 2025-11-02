@@ -98,7 +98,7 @@ const Now = () => {
               </h2>
               {isLoading ? (
                 <div className="loader-container">
-                  <div className="loader"></div>
+                  <div className="loader" />
                 </div>
               ) : (
                 <ProjectsList

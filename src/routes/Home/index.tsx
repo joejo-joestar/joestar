@@ -74,7 +74,7 @@ function Home() {
             </p>
             {isloading ? (
               <div className="loader-container">
-                <div className="loader"></div>
+                <div className="loader" />
               </div>
             ) : (
               <ProjectsList repos={isloading ? [] : repos} limit={6} />

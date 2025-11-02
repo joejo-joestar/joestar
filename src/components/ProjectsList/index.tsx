@@ -35,7 +35,10 @@ const Projects: React.FC<ProjectsProps> = ({ repos, limit, singleCol }) => {
               {repo.owner}/{repo.name}
             </a>
             <p className="repo-desc">{repo.description}</p>
-            <Link to={`/projects/${repo.owner}/${repo.name}/readme`}>
+            <Link
+              className="repo-readme"
+              to={`/projects/${repo.owner}/${repo.name}/readme`}
+            >
               readme!
             </Link>
             {repo.homepage && (
@@ -45,7 +48,7 @@ const Projects: React.FC<ProjectsProps> = ({ repos, limit, singleCol }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                homepage
+                homepage!
               </a>
             )}
             <span className="language">{repo.language}</span>

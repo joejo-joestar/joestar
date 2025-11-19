@@ -45,7 +45,7 @@ const Contact = () => {
                 navigator.clipboard.writeText("joecn2704+hello\x40outlook.com");
               }}
             >
-              joecn2704<em>{"<at>"}</em>outlook<em>{"<dot>"}</em>com
+              joecn2704+hello<em>{"<at>"}</em>outlook<em>{"<dot>"}</em>com
             </p>
           </p>
           <p className="resume-span">

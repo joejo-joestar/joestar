@@ -1,6 +1,7 @@
 import axios from "axios";
 
 // Use the hosted middleware to proxy GitHub requests and handle auth/blacklist/cache server-side
+// const MIDDLEWARE_ROOT = "http://localhost:3000";
 const MIDDLEWARE_ROOT = "https://api.joestar.is-a.dev";
 
 export const getRepos = async (noCache = false) => {
@@ -27,6 +28,29 @@ export const getRepos = async (noCache = false) => {
       err && (err as any).message ? (err as any).message : err
     );
     return [];
+  }
+};
+
+export const getReadme = async (ownerName: string, repoName: string) => {
+  const url = `${MIDDLEWARE_ROOT}/github/${ownerName}/${repoName}/readme`;
+  try {
+    const { data } = await axios.get(url, {
+      headers: {
+        Accept: "text/plain",
+      },
+      timeout: 5000,
+    });
+    if (data && typeof data === "string") return data;
+    return "";
+  } catch (err) {
+    // swallow and return empty string on network or parse errors
+    // caller/UI should handle empty string gracefully
+    // eslint-disable-next-line no-console
+    console.error(
+      "getReadme middleware error:",
+      err && (err as any).message ? (err as any).message : err
+    );
+    return "";
   }
 };
 

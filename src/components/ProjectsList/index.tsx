@@ -1,7 +1,9 @@
+import { Link } from "react-router";
 import "./index.css";
 
 interface RepoProps {
   id: number;
+  owner: string;
   name: string;
   description: string;
   homepage?: string;
@@ -30,9 +32,15 @@ const Projects: React.FC<ProjectsProps> = ({ repos, limit, singleCol }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              {repo.name}
+              {repo.owner}/{repo.name}
             </a>
             <p className="repo-desc">{repo.description}</p>
+            <Link
+              className="repo-readme"
+              to={`/projects/${repo.owner}/${repo.name}/readme`}
+            >
+              readme!
+            </Link>
             {repo.homepage && (
               <a
                 className="repo-homepage"
@@ -40,7 +48,7 @@ const Projects: React.FC<ProjectsProps> = ({ repos, limit, singleCol }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                homepage
+                homepage!
               </a>
             )}
             <span className="language">{repo.language}</span>

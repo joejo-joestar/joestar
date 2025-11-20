@@ -19,7 +19,8 @@ const Projects = () => {
         const filtered = (data || []).filter((r: any) => !blacklist.has(r.id));
         const mapped = filtered.map((r: any) => ({
           id: r.id,
-          name: r.full_name,
+          owner: r.owner?.login || "",
+          name: r.name,
           description: r.description || r.full_name || "",
           homepage: r.homepage || undefined,
           language: r.language || "",
@@ -66,14 +67,12 @@ const Projects = () => {
               </p>
             </span>
           </div>
-          {/* The loader is now controlled by the 'isLoading' state */}
           {isLoading ? (
             <div className="loader-container">
-              <div className="loader"></div>
+              <div className="loader" />
             </div>
           ) : (
             <div className="repos-grid">
-              {" "}
               <ProjectsList repos={isLoading ? [] : repos} />
             </div>
           )}

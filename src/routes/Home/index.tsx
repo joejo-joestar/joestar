@@ -8,7 +8,7 @@ import { getRepos, repoBlacklist } from "@/api/github";
 function Home() {
   useScrollToTop();
   const [repos, setRepos] = useState<any[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [isloading, setLoading] = useState(true);
 
   useEffect(() => {
     let mounted = true;
@@ -20,7 +20,8 @@ function Home() {
         const filtered = (data || []).filter((r: any) => !blacklist.has(r.id));
         const mapped = filtered.map((r: any) => ({
           id: r.id,
-          name: r.full_name,
+          owner: r.owner.login,
+          name: r.name,
           description: r.description || r.full_name || "",
           homepage: r.homepage || undefined,
           language: r.language || "",
@@ -71,7 +72,13 @@ function Home() {
               here are some of the <Link to="projects">projects</Link> i have,
               and am still working on
             </p>
-            <ProjectsList repos={loading ? [] : repos} limit={6} />
+            {isloading ? (
+              <div className="loader-container">
+                <div className="loader" />
+              </div>
+            ) : (
+              <ProjectsList repos={isloading ? [] : repos} limit={6} />
+            )}
           </span>
         </div>
       </section>

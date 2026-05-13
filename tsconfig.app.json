@@ -3,11 +3,7 @@
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": [
-      "ES2020",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
@@ -26,31 +22,15 @@
     "noUncheckedSideEffectImports": true,
     // https://stackoverflow.com/a/77249075
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@assets/*": [
-        "./src/assets/*"
-      ],
-      "@api/*": [
-        "./src/api/*"
-      ],
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@hooks/*": [
-        "./src/hooks/*"
-      ],
-      "@routes/*": [
-        "./src/routes/*"
-      ],
-      "@shared/*": [
-        "./src/shared/*"
-      ],
+      "@/*": ["./src/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@api/*": ["./src/api/*"],
+      "@components/*": ["./src/components/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@routes/*": ["./src/routes/*"],
+      "@shared/*": ["./src/shared/*"]
     }
   },
-  "include": [
-    "src",
-    "public/oneko.js"
-  ]
+  "include": ["src", "public/oneko.js"],
+  "types": ["node"]
 }

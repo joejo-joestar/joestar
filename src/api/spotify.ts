@@ -8,7 +8,7 @@ const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 export const getAccessToken = async (
   clientId: string,
   clientSecret: string,
-  refreshToken: string
+  refreshToken: string,
 ) => {
   //Creates a base64 code of client_id:client_secret as required by the API
   //Browser-safe: use btoa when available, otherwise fall back to Buffer
@@ -61,7 +61,7 @@ export const getNowPlaying = async () => {
     // eslint-disable-next-line no-console
     console.error(
       "getNowPlaying middleware error:",
-      error && error.message ? error.message : error
+      error && error.message ? error.message : error,
     );
     return null;
   }

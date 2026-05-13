@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
 
 const MIDDLEWARE_ROOT = "https://api.joestar.is-a.dev";
@@ -17,10 +18,9 @@ export const getCollections = async (noCache = false) => {
     if (Array.isArray(data)) return data;
     return [];
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.error(
       "getCollections middleware error:",
-      err && (err as any).message ? (err as any).message : err
+      err && (err as any).message ? (err as any).message : err,
     );
     return [];
   }
@@ -50,7 +50,7 @@ export const getPhotos = async ({
     // eslint-disable-next-line no-console
     console.error(
       "getPhotos middleware error:",
-      err && (err as any).message ? (err as any).message : err
+      err && (err as any).message ? (err as any).message : err,
     );
     return [];
   }

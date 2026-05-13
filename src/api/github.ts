@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
 
 // Use the hosted middleware to proxy GitHub requests and handle auth/blacklist/cache server-side
@@ -22,10 +23,9 @@ export const getRepos = async (noCache = false) => {
   } catch (err) {
     // swallow and return empty list on network or parse errors
     // caller/UI should handle empty array gracefully
-    // eslint-disable-next-line no-console
     console.error(
       "getRepos middleware error:",
-      err && (err as any).message ? (err as any).message : err
+      err && (err as any).message ? (err as any).message : err,
     );
     return [];
   }
@@ -45,10 +45,9 @@ export const getReadme = async (ownerName: string, repoName: string) => {
   } catch (err) {
     // swallow and return empty string on network or parse errors
     // caller/UI should handle empty string gracefully
-    // eslint-disable-next-line no-console
     console.error(
       "getReadme middleware error:",
-      err && (err as any).message ? (err as any).message : err
+      err && (err as any).message ? (err as any).message : err,
     );
     return "";
   }
@@ -60,4 +59,7 @@ export const repoBlacklist = [
   { id: 1047632816 },
   { id: 689259000 },
   { id: 1063993915 },
+  { id: 1195501313 },
+  { id: 1062568908 },
+  { id: 706173274 },
 ];

@@ -1,4 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
+import { Buffer } from "buffer";
 
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token";
 
@@ -58,7 +60,6 @@ export const getNowPlaying = async () => {
 
     return null;
   } catch (error: any) {
-    // eslint-disable-next-line no-console
     console.error(
       "getNowPlaying middleware error:",
       error && error.message ? error.message : error,

@@ -19,6 +19,7 @@
     "@vercel/speed-insights": "^2.0.0",
     "autoprefixer": "^10.5.0",
     "axios": "^1.16.1",
+    "buffer": "^6.0.3",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "postcss": "^8.5.14",

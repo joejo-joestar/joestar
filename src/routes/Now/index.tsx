@@ -54,15 +54,9 @@ const Now = () => {
       </h1>
       <div className="now-body-content">
         <span>
-          i'm currently working at{" "}
-          <a
-            href="https://alshirawiequipment.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Al Shirawi Equipment
-          </a>{" "}
-          as a production engineering intern.
+          i'm currently doing my last semester in uni and working on some
+          projects. head over to the <NavLink to="/projects">projects</NavLink>{" "}
+          page to see what i've been working on!
         </span>
         <span>check below to see what i'm up to right now!</span>
         <span>

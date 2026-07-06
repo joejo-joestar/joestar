@@ -19,6 +19,7 @@ const Password = () => {
 
   const handleHash = async () => {
     setError("");
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const result = await useHashPassword(input);
     const url = passwordUrlMap[result];
     if (url) {

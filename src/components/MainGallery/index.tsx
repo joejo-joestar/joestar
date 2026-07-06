@@ -1,4 +1,6 @@
 import "./index.css";
+import { useState } from "react";
+import PhotoViewer from "@components/PhotoViewer/index.tsx";
 
 interface ImageProps {
   id: string;
@@ -11,19 +13,27 @@ interface GalleryProps {
 }
 
 const Gallery: React.FC<GalleryProps> = ({ images }) => {
+  const [selectedPhotoId, setSelectedPhotoId] = useState<string | null>(null);
+
   return (
     <div className="gallery">
       {images.map((image) => (
-        <>
-          <a
-            href={image.unsplashLink}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img key={image.id} src={image.imageUrl} alt={`${image.id}`} />
-          </a>
-        </>
+        <button
+          key={image.id}
+          type="button"
+          className="gallery-item"
+          onClick={() => setSelectedPhotoId(image.id)}
+        >
+          <img src={image.imageUrl} alt={`${image.id}`} />
+        </button>
       ))}
+      {selectedPhotoId && (
+        <PhotoViewer
+          key={selectedPhotoId}
+          photoId={selectedPhotoId}
+          onClose={() => setSelectedPhotoId(null)}
+        />
+      )}
     </div>
   );
 };

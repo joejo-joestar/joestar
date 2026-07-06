@@ -57,7 +57,7 @@ function Readmes() {
     return () => {
       mounted = false;
     };
-  }, [repo]);
+  }, [owner, repo]);
 
   return (
     <section className="readme">
@@ -65,16 +65,16 @@ function Readmes() {
       <div className="readme-body-content">
         <div className="readme-nav">
           <Link className="go-back" to="/projects/">
-            <FontAwesomeIcon className="back-arrow" icon={faArrowLeft as any} />{" "}
-            Go Back!
+            <FontAwesomeIcon className="back-arrow" icon={faArrowLeft} /> Go
+            Back!
           </Link>
           <a
             className="go-to-repo"
             href={`http://github.com/${owner}/${repo}`}
             target="_blank"
           >
-            <FontAwesomeIcon className="repo-link" icon={faGithub as any} /> Go
-            to the Repo!
+            <FontAwesomeIcon className="repo-link" icon={faGithub} /> Go to the
+            Repo!
           </a>
         </div>
         {isLoading ? (

@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 export function fixReadmePaths(raw: string, owner: string, repo: string) {
   if (!raw || !owner || !repo) return raw;
 
@@ -30,7 +31,7 @@ export function fixReadmePaths(raw: string, owner: string, repo: string) {
         return `${alt}(${replaced} \"${parts.slice(1).join('"')}`;
       }
       return `${alt}(${replaced})`;
-    }
+    },
   );
 
   // Replace markdown links: [text](path)
@@ -51,7 +52,7 @@ export function fixReadmePaths(raw: string, owner: string, repo: string) {
         return `[${text}](${replaced} \"${parts.slice(1).join('"')}`;
       }
       return `[${text}](${replaced})`;
-    }
+    },
   );
 
   // Replace quoted src/href first (handles <img src="..."> and <a href='...'>)
@@ -72,7 +73,7 @@ export function fixReadmePaths(raw: string, owner: string, repo: string) {
           ? `https://github.com/${owner}/${repo}/raw/main/${path}`
           : `https://github.com/${owner}/${repo}/blob/main/${path}`;
       return `${attr}="${base}"`;
-    }
+    },
   );
 
   // Replace unquoted src/href: src=/path.png or src=../img.png
@@ -111,7 +112,7 @@ export function fixReadmePaths(raw: string, owner: string, repo: string) {
           return [replaced, ...segs.slice(1)].join(" ");
         });
       return `srcset="${parts.join(", ")}"`;
-    }
+    },
   );
 
   return html;

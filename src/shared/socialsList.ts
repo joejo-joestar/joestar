@@ -5,6 +5,7 @@ import {
   faUnsplash,
 } from "@fortawesome/free-brands-svg-icons";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const socials: { name: string; icon: any; url: string }[] = [
   {
     name: "Instagram",

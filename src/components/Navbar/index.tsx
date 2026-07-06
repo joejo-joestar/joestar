@@ -3,6 +3,7 @@ import { NavLink, Outlet } from "react-router";
 import useMediaQuery from "@hooks/useMediaQuery";
 import { useState } from "react";
 import { NavItems } from "./NavItems";
+import { LuX, LuMenu } from "react-icons/lu";
 
 function activeStyle({ isActive }: { isActive: boolean }) {
   return {
@@ -57,37 +58,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="menu-button"
             >
-              {isOpen ? (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  style={{ width: "2em", height: "2em" }}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  style={{ width: "2em", height: "2em" }}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg>
-              )}
+              {isOpen ? <LuX /> : <LuMenu />}
             </button>
 
             {/* Sidebar */}

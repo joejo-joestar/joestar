@@ -42,19 +42,15 @@ const Contact = () => {
             <p
               className="email"
               onClick={() => {
-                navigator.clipboard.writeText("joecn2704+hello\x40outlook.com");
+                navigator.clipboard.writeText("hello\x40joejojoestar.com");
               }}
             >
-              joecn2704+hello<em>{"<at>"}</em>outlook<em>{"<dot>"}</em>com
+              hello<em>{"<at>"}</em>joejojoestar<em>{"<dot>"}</em>com
             </p>
           </p>
           <p className="resume-span">
             or even check out my resume{" "}
-            <a
-              href="https://drive.google.com/file/d/1o9rlqZ5aGQwrtbtODvfEmDuDWkWJZQFU/view?usp=sharing"
-              target="blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://cv.joejojoestar.com" target="blank">
               here
             </a>
             .

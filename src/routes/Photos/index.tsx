@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import "./index.css";
 import CategoryMenu from "@components/CategoryMenu/index.tsx";
 import { useEffect, useState, type SetStateAction } from "react";
@@ -21,9 +22,9 @@ const Photos = () => {
     const collectionData = async () => {
       setIsLoading(true);
       try {
-        const fetechedCollections = await getCollections();
+        const fetchedCollections = await getCollections();
 
-        const collectionList = fetechedCollections.map((collection: any) => ({
+        const collectionList = fetchedCollections.map((collection: any) => ({
           id: collection.id,
           title: collection.title,
           link: collection.links.html,
@@ -50,7 +51,7 @@ const Photos = () => {
                 img.onload = resolve;
                 img.onerror = reject;
               });
-            })
+            }),
           );
 
           setImageArray(photosArray);
@@ -76,7 +77,7 @@ const Photos = () => {
     setActiveCategory(category);
 
     const selectedCollection = collectionList.find(
-      (collection) => collection.title === category
+      (collection) => collection.title === category,
     );
 
     if (selectedCollection) {
@@ -99,7 +100,7 @@ const Photos = () => {
               img.onload = resolve;
               img.onerror = reject;
             });
-          })
+          }),
         );
 
         setImageArray(photosArray);
@@ -114,7 +115,7 @@ const Photos = () => {
   };
 
   const filteredImages = imageArray.filter(
-    (image) => image.category === activeCategory
+    (image) => image.category === activeCategory,
   );
 
   return (

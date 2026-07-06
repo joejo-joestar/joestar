@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { NavLink } from "react-router";
 import "./index.css";
 import { useScrollToTop } from "@/hooks/useScrollToTop";

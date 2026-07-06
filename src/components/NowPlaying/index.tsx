@@ -107,7 +107,7 @@ const NowPlaying = () => {
           </div>
         ) : (
           <div className="now-playing-image-placeholder">
-            <FontAwesomeIcon icon={faCompactDisc as any} size="2x" spin />
+            <FontAwesomeIcon icon={faCompactDisc} size="2x" spin />
           </div>
         )}
         {/* MARK: Now Playing Details */}

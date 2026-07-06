@@ -3,7 +3,7 @@ import axios from "axios";
 
 // Use the hosted middleware to proxy GitHub requests and handle auth/blacklist/cache server-side
 // const MIDDLEWARE_ROOT = "http://localhost:3000";
-const MIDDLEWARE_ROOT = "https://api.joestar.is-a.dev";
+const MIDDLEWARE_ROOT = "https://api.joejojoestar.com";
 
 export const getRepos = async (noCache = false) => {
   const url = `${MIDDLEWARE_ROOT}/github/repos${noCache ? "?no_cache=1" : ""}`;

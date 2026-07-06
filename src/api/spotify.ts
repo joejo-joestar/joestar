@@ -40,7 +40,7 @@ export const getAccessToken = async (
 //Uses the access token to fetch the currently playing song
 export const getNowPlaying = async () => {
   // Use the server-side middleware to fetch and simplify now-playing info
-  const MIDDLEWARE_ROOT = "https://api.joestar.is-a.dev";
+  const MIDDLEWARE_ROOT = "https://api.joejojoestar.com";
   const url = `${MIDDLEWARE_ROOT}/spotify/now-playing`;
 
   try {

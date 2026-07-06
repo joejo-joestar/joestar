@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import axios from "axios";
 
-const MIDDLEWARE_ROOT = "https://api.joestar.is-a.dev";
+const MIDDLEWARE_ROOT = "https://api.joejojoestar.com";
 
 export const getCollections = async (noCache = false) => {
   const url = `${MIDDLEWARE_ROOT}/unsplash/collections${noCache ? "?no_cache=1" : ""}`;
@@ -12,9 +12,7 @@ export const getCollections = async (noCache = false) => {
       validateStatus: () => true,
     });
 
-    // middleware returns { meta, collections }
     if (data && Array.isArray(data.collections)) return data.collections;
-    // fallback: some middleware variants may return array directly
     if (Array.isArray(data)) return data;
     return [];
   } catch (err) {
@@ -42,12 +40,10 @@ export const getPhotos = async ({
       validateStatus: () => true,
     });
 
-    // middleware returns { meta, photos }
     if (data && Array.isArray(data.photos)) return data.photos;
     if (Array.isArray(data)) return data;
     return [];
   } catch (err) {
-    // eslint-disable-next-line no-console
     console.error(
       "getPhotos middleware error:",
       err && (err as any).message ? (err as any).message : err,

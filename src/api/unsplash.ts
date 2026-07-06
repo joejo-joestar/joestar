@@ -51,3 +51,23 @@ export const getPhotos = async ({
     return [];
   }
 };
+
+export const getPhoto = async (photoID: string) => {
+  const url = `${MIDDLEWARE_ROOT}/unsplash/photos/${photoID}`;
+  try {
+    const { data } = await axios.get(url, {
+      headers: { Accept: "application/json" },
+      timeout: 5000,
+      validateStatus: () => true,
+    });
+    if (data && typeof data === "object" && data.photo) return data.photo;
+    if (data && typeof data === "object") return data as any;
+    return null;
+  } catch (err: any) {
+    console.error(
+      "getPhoto middleware error:",
+      err && (err as any).message ? (err as any).message : err,
+    );
+    return [];
+  }
+};

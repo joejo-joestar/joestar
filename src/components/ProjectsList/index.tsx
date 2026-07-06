@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import "./index.css";
+import { LuExternalLink } from "react-icons/lu";
 
 interface RepoProps {
   id: number;
@@ -48,7 +49,7 @@ const Projects: React.FC<ProjectsProps> = ({ repos, limit, singleCol }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                homepage!
+                homepage <LuExternalLink />
               </a>
             )}
             <span className="language">{repo.language}</span>

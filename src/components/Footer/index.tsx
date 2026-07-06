@@ -2,11 +2,31 @@ import "./index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { socials } from "@shared/socialsList";
 import { NavLink } from "react-router";
+import { useEffect, useRef } from "react";
 
 const Footer = () => {
   const hehe = "\x70\x61\x73\x6f\x77\x72\x64";
+  const footerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const footer = footerRef.current;
+    if (!footer) return;
+
+    const updateHeight = () => {
+      document.documentElement.style.setProperty(
+        "--footer-height",
+        `${footer.offsetHeight}px`,
+      );
+    };
+
+    updateHeight();
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <footer>
+    <footer ref={footerRef}>
       <p>
         &copy; {new Date().getFullYear()} Joseph Cijo
         <NavLink to={hehe}>.</NavLink> All rights reserved

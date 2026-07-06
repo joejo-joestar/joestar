@@ -2,6 +2,7 @@
   width: 80%;
   max-width: 1200px;
   padding: 1em;
+  padding-bottom: var(--footer-height);
   display: flex;
   flex-direction: column;
   align-items: flex-start;

@@ -1,5 +1,5 @@
 import { getNowPlaying } from "@/api/spotify";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import "./index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCompactDisc } from "@fortawesome/free-solid-svg-icons";
@@ -20,8 +20,12 @@ interface NowPlayingData {
 const NowPlaying = () => {
   //Hold information about the currently playing song; API may return an object, a string message, or null
   const [nowPlaying, setNowPlaying] = useState<NowPlayingData | string | null>(
-    null
+    null,
   );
+  const [isTitleOverflowing, setIsTitleOverflowing] = useState(false);
+  const [isArtistOverflowing, setIsArtistOverflowing] = useState(false);
+  const titleTextRef = useRef<HTMLSpanElement>(null);
+  const artistTextRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const fetchNowPlaying = async () => {
@@ -60,7 +64,27 @@ const NowPlaying = () => {
     playerState = "OFFLINE";
   }
 
-  // no timestamp helper needed anymore
+  // measure whether the title/artist text actually overflows its container,
+  // so the marquee only runs when needed instead of a hardcoded length check
+  useLayoutEffect(() => {
+    const measure = () => {
+      setIsTitleOverflowing(
+        !!titleTextRef.current &&
+          titleTextRef.current.scrollWidth > titleTextRef.current.clientWidth,
+      );
+      setIsArtistOverflowing(
+        !!artistTextRef.current &&
+          artistTextRef.current.scrollWidth > artistTextRef.current.clientWidth,
+      );
+    };
+
+    measure();
+
+    const observer = new ResizeObserver(measure);
+    if (titleTextRef.current) observer.observe(titleTextRef.current);
+    if (artistTextRef.current) observer.observe(artistTextRef.current);
+    return () => observer.disconnect();
+  }, [title, artist, playerState]);
 
   return (
     //Depending on the value of playerState, the href, album image and icons are updated
@@ -88,55 +112,54 @@ const NowPlaying = () => {
         )}
         {/* MARK: Now Playing Details */}
         <div id="now-playing-details">
-          {playerState === "OFFLINE" ? (
-            <div className="now-playing-offline">
-              getting my ears yapped off right now!!
-            </div>
-          ) : (
+          {playerState === "ONLINE" ? (
             <>
               <div
-                className={`now-playing-title ${title.length > 20 ? "marquee-content" : ""}`}
+                className={`now-playing-title ${isTitleOverflowing ? "marquee-content" : ""}`}
               >
-                <span className="now-playing-text">
-                  {playerState === "ONLINE" ? (
-                    <>
-                      <a
-                        href={
-                          nowPlaying && typeof nowPlaying !== "string"
-                            ? nowPlaying.songUrl
-                            : ""
-                        }
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {title}
-                      </a>
-                      {title.length > 20 && (
-                        <>
-                          <a
-                            href={
-                              nowPlaying && typeof nowPlaying !== "string"
-                                ? nowPlaying.songUrl
-                                : ""
-                            }
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {title}
-                          </a>
-                        </>
-                      )}
-                    </>
-                  ) : (
-                    <span>{title}</span>
+                <span className="now-playing-text" ref={titleTextRef}>
+                  <a
+                    href={
+                      nowPlaying && typeof nowPlaying !== "string"
+                        ? nowPlaying.songUrl
+                        : ""
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {title}
+                  </a>
+                  {isTitleOverflowing && (
+                    <a
+                      href={
+                        nowPlaying && typeof nowPlaying !== "string"
+                          ? nowPlaying.songUrl
+                          : ""
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {title}
+                    </a>
                   )}
                 </span>
               </div>
               <div
-                className={`now-playing-artist ${artist.length > 20 ? "marquee-content" : ""}`}
+                className={`now-playing-artist ${isArtistOverflowing ? "marquee-content" : ""}`}
               >
-                <span className="now-playing-text">
-                  {playerState === "ONLINE" ? (
+                <span className="now-playing-text" ref={artistTextRef}>
+                  <a
+                    href={
+                      nowPlaying && typeof nowPlaying !== "string"
+                        ? nowPlaying.artistUrl
+                        : ""
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {artist}
+                  </a>
+                  {isArtistOverflowing && (
                     <a
                       href={
                         nowPlaying && typeof nowPlaying !== "string"
@@ -148,12 +171,14 @@ const NowPlaying = () => {
                     >
                       {artist}
                     </a>
-                  ) : (
-                    <span>{artist}</span>
                   )}
                 </span>
               </div>
             </>
+          ) : (
+            <div className="now-playing-offline">
+              getting my ears yapped off right now!!
+            </div>
           )}
         </div>
       </div>

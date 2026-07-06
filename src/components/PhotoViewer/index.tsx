@@ -10,6 +10,7 @@ import {
   LuChartSpline,
   LuClock,
   LuExternalLink,
+  LuMaximize2,
 } from "react-icons/lu";
 
 interface PhotoDetails {
@@ -124,7 +125,7 @@ const PhotoViewer: React.FC<PhotoViewerProps> = ({ photoId, onClose }) => {
             <div className="photo-viewer-details">
               {(photo.location?.city || photo.location?.country) && (
                 <p className="photo-viewer-location">
-                  <LuMapPin />{" "}
+                  <LuMapPin className="exif-icons" />{" "}
                   {[photo.location.city, photo.location.country]
                     .filter(Boolean)
                     .join(", ")}
@@ -173,7 +174,8 @@ const PhotoViewer: React.FC<PhotoViewerProps> = ({ photoId, onClose }) => {
               )}
 
               <p className="photo-viewer-meta">
-                {photo.width} x {photo.height}
+                <LuMaximize2 className="exif-icons" /> {photo.width} x{" "}
+                {photo.height}
               </p>
 
               {photo.links?.html && (
@@ -183,7 +185,8 @@ const PhotoViewer: React.FC<PhotoViewerProps> = ({ photoId, onClose }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  view on unsplash <LuExternalLink />
+                  view on unsplash{" "}
+                  <LuExternalLink className="photo-viewer-link-icon" />
                 </a>
               )}
             </div>

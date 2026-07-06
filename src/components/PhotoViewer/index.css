@@ -97,6 +97,8 @@
 .exif-icons {
   color: var(--main-overlay-color);
   font-size: 1rem;
+  display: inline-block;
+  vertical-align: middle;
 }
 .photo-viewer-exif-lens {
   display: flex;
@@ -108,7 +110,7 @@
 
 .photo-viewer-meta {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.5rem;
   color: var(--main-overlay-color);
   font-size: 0.9rem;
@@ -117,6 +119,11 @@
 .photo-viewer-link {
   align-self: flex-start;
   margin-top: 0.25rem;
+}
+.photo-viewer-link-icon {
+  margin-left: 0.5em;
+  vertical-align: baseline;
+  transition: color 0.2s ease-in-out;
 }
 
 @media (min-width: 768px) {

@@ -65,8 +65,8 @@
   height: 1em;
   margin-left: 0.5em;
   vertical-align: middle;
-  fill: var(--main-text-color-quaternary);
-  transition: fill 0.2s ease-in-out;
+  color: var(--main-text-color-quaternary);
+  transition: color 0.2s ease-in-out;
 }
 
 .external-link:hover {
@@ -80,7 +80,7 @@
 }
 
 .external-link-icon:hover {
-  fill: var(--main-accent-color-green);
+  color: var(--main-accent-color-green);
 }
 
 /* mobile */

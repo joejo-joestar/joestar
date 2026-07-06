@@ -60,7 +60,7 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({
           aria-label={`Link to ${category} (opens in new tab)`}
           className="external-link"
         >
-          <LuExternalLink />
+          <LuExternalLink className="external-link-icon" />
         </a>
       </button>
     ));
